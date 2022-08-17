@@ -57,12 +57,35 @@ students = ['Ivan', 'Masha', 'Sasha']
 # b[2] = 30
 # print(b)
 # print(a)
+#
+# a = [int(i) for i in input().split()]
+# print(a[::2])
 
-a = [0] * 5
-print(a)
-a = [0 for i in range(5)]
-print(a)
-a = [i * i for i in range(5)]
-print(a)
-a = [int(i) for i in input().split()]
-print(a)
+
+# chet = []
+# a = [int(i) for i in input().split()]
+# for i in a:
+#     if i % 2 == 0:
+#         chet.append(i)
+# print(*chet)
+
+
+# s = [int(i) for i in input().split()]
+# count = 0
+# for i in range(1, len(s) - 1):
+#     if s[i] > s[i-1] and s[i] > s[i + 1]:
+#         # or s[i-1] < s[i] > s[i+1]:
+#         count += 1
+#
+# print(count)
+
+
+# s = [int(i) for i in input().split()]
+# print(max(s), s.index(max(s)))
+
+
+s = [int(i) for i in input().split()]
+x = int(input())
+s.append(x)
+s.sort()
+print(s.index(x))

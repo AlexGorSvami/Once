@@ -55,5 +55,19 @@
 import sys
 
 import xml.etree.ElementTree as ET
-
 tree = ET.parse('newssafr.xml')
+
+xml_root = tree.getroot()
+print(xml_root.tag)
+print(xml_root.text)
+print(xml_root.attrib)
+
+titles_list = xml_root.findall('channel/item/title')
+print(len(titles_list))
+
+for title in titles_list:
+    print(title.text)
+
+items_list = xml_root.findall('channel/item')
+print(items_list[0].attrib)
+print(items_list[0].find('title').text)
