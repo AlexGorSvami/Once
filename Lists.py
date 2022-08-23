@@ -84,8 +84,45 @@ students = ['Ivan', 'Masha', 'Sasha']
 # print(max(s), s.index(max(s)))
 
 
+# s = [int(i) for i in input().split()]
+# x = int(input())
+# pos = 0
+# while pos < len(s) and x <= s[pos]:
+#     pos += 1
+#
+# print(pos + 1)
+
+# s = [int(i) for i in input().split()]
+# count = 1
+# # s1 = set(s)
+# # print(len(s1))
+# for i in range(len(s)-1):
+#     if s[i] != s[i+1]:
+#         count += 1
+#
+# print(count)
+
+# s = [int(i) for i in input().split()]
+# for i in range(1, len(s), 2):
+#     s[i - 1], s[i] = s[i], s[i - 1]
+# print(' '.join([str(i) for i in s]))
+
 s = [int(i) for i in input().split()]
-x = int(input())
-s.append(x)
-s.sort()
-print(s.index(x))
+min_ = 0
+max_ = 0
+for i in range(1, len(s)):
+    if s[i] > s[max_]:
+        max_ = i
+    if s[i] < s[min_]:
+        min_ = i
+s[max_], s[min_] = s[min_], s[max_]
+print(' '.join([str(i) for i in s]))
+
+
+
+
+
+
+
+
+
