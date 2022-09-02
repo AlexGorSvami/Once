@@ -107,16 +107,45 @@ students = ['Ivan', 'Masha', 'Sasha']
 #     s[i - 1], s[i] = s[i], s[i - 1]
 # print(' '.join([str(i) for i in s]))
 
-s = [int(i) for i in input().split()]
-min_ = 0
-max_ = 0
-for i in range(1, len(s)):
-    if s[i] > s[max_]:
-        max_ = i
-    if s[i] < s[min_]:
-        min_ = i
-s[max_], s[min_] = s[min_], s[max_]
-print(' '.join([str(i) for i in s]))
+# s = [int(i) for i in input().split()]
+# min_ = 0
+# max_ = 0
+# for i in range(1, len(s)):
+#     if s[i] > s[max_]:
+#         max_ = i
+#     if s[i] < s[min_]:
+#         min_ = i
+# s[max_], s[min_] = s[min_], s[max_]
+# print(' '.join([str(i) for i in s]))
+
+
+# a = [int(i) for i in input().split()]
+# k = int(input())
+# a.pop(k)
+# print(*a)
+
+
+a = [int(i) for i in input().split()]
+k,c = [int(i) for i in input().split()]
+a.insert(k,c)
+print(*a)
+
+
+a = [int(s) for s in input().split()]
+
+# обратите внимание на множественное присваивание:
+# справа от "=" стоит список из двух элементов,
+# а слева -- две переменные,
+# поэтому так делать можно
+k, C = [int(s) for s in input().split()]
+
+a.append(0)
+for i in range(len(a) - 1, k, -1):
+    a[i] = a[i - 1]
+a[k] = C
+print(' '.join([str(i) for i in a]))
+
+
 
 
 

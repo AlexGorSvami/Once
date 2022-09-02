@@ -1,3 +1,5 @@
+import time
+
 from bs4 import BeautifulSoup
 import requests
 
@@ -28,18 +30,43 @@ from pprint import pprint
 #     print(category)
 
 
-URL = 'https://netology.ru/blog/?s=python'
+# URL = 'https://netology.ru/blog/?s=python'
+#
+# res = requests.get(URL)
+#
+# soup = BeautifulSoup(res.text)
+#
+# news = soup.find_all('article', class_='status-publish')
+# print(news)
+#
+# for post in news:
+#     header = post.find('h2', 'entry-title')
+#     print(header)
+#     link = post.find('a').get('h1')
+#     print(link)
 
-res = requests.get(URL)
+params = {
+    'query_args[s]': 'python',
+    'page': '1'
+}
 
-soup = BeautifulSoup(res.text)
+# print(html)
 
-news = soup.find_all('article', class_='status-publish')
-print(news)
+import time
 
-for post in news:
-    header = post.find('h2', 'entry-title')
-    print(header)
-    link = post.find('a').get('h1')
-    print(link)
-
+URL = 'https://netology.ru/blog/?infinity=scrolling'
+for page in range(1, 5):
+    params = {
+    'query_args[s]': 'python',
+    'page': page
+    }
+    res = requests.post(URL, params=params)
+    time.sleep(0.2)
+    html = res.json()['html']
+    soup = BeautifulSoup(html)
+    news = soup.find_all('article', class_='status-publish')
+    for post in news:
+        header = post.find('h2', 'entry-title').text
+        print(header)
+        link = post.find('a').get('href')
+        print(link)
