@@ -125,25 +125,39 @@ students = ['Ivan', 'Masha', 'Sasha']
 # print(*a)
 
 
+# a = [int(i) for i in input().split()]
+# k,c = [int(i) for i in input().split()]
+# a.insert(k,c)
+# print(*a)
+#
+#
+# a = [int(s) for s in input().split()]
+#
+# # обратите внимание на множественное присваивание:
+# # справа от "=" стоит список из двух элементов,
+# # а слева -- две переменные,
+# # поэтому так делать можно
+# k, C = [int(s) for s in input().split()]
+#
+# a.append(0)
+# for i in range(len(a) - 1, k, -1):
+#     a[i] = a[i - 1]
+# a[k] = C
+# print(' '.join([str(i) for i in a]))
+
+
+# a = [int(i) for i in input().split()]
+# count = 0
+# for i in range(len(a)):
+#     for j in range(i + 1, len(a)):
+#         if a[i] == a[j]:
+#             count += 1
+#
+# print(count)
+#
+
 a = [int(i) for i in input().split()]
-k,c = [int(i) for i in input().split()]
-a.insert(k,c)
-print(*a)
-
-
-a = [int(s) for s in input().split()]
-
-# обратите внимание на множественное присваивание:
-# справа от "=" стоит список из двух элементов,
-# а слева -- две переменные,
-# поэтому так делать можно
-k, C = [int(s) for s in input().split()]
-
-a.append(0)
-for i in range(len(a) - 1, k, -1):
-    a[i] = a[i - 1]
-a[k] = C
-print(' '.join([str(i) for i in a]))
+uniqe =
 
 
 
