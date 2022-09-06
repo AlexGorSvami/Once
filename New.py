@@ -18,3 +18,11 @@
 #     print('YES')
 # else:
 #     print('NO')
+
+my_str = 'Valera'
+
+new_str = my_str[len(my_str)//2-1:len(my_str)//2+1]
+
+print(new_str)
+
+
