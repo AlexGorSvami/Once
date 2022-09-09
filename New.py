@@ -125,8 +125,20 @@
 #     print(nearest_value({4, 7, 10, 11, 12, 17}, 9))
 
 
-a, b = map(int, input().split())
-print((a+b-2)-(a-1), (a+b-2)-(b-1))
+# a, b = map(int, input().split())
+# print((a+b-2)-(a-1), (a+b-2)-(b-1))
+#
+# a = int(input())
+# b = int(input())
+# c = int(input())
+# print(max((a+b+c), (a*b*c), (a*(b+c)), ((a+b)*c), (a*b + c), (a + b * c)))
+
+def nearest_value(values: set, one: int) -> int:
+    if one in values:
+        return one
+    else:
 
 
+
+assert nearest_value({4, 7, 10, 11, 12, 17}, 9)
 
