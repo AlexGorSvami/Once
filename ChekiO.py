@@ -1,18 +1,3 @@
-# values = {-6, -2, 4, 7, 12, 17}
-# one = -4
-# if one in values:
-#     print(one)
-# else:
-#     values.add(one)
-#     l1 = list(values)
-#     l1.sort()
-#     ind = l1.index(one)
-#     if one > 0:
-#         abs(l1[ind]) - abs(l1[ind-1]) >= abs(l1[ind]) - abs(l1[ind+1]):
-#             print(l1[ind-1])
-#     else:
-#         print(l1[+1])
-
 # def nearest_value(values: set, one: int):
 #     if one in values:
 #         return one
@@ -21,31 +6,55 @@
 #         l1 = list(values)
 #         l1.sort()
 #         ind = l1.index(one)
-#         if abs(l1[ind]) - abs(l1[ind-1]) >= abs(l1[ind]) - abs(l1[ind+1]):
+#         try:
+#             if one == 0:
+#                 if ind == 0:
+#                     return l1[ind + 1]
+#                 else:
+#                     return l1[ind -1]
+#             elif one > 0:
+#                 if abs(l1[ind]) - abs(l1[ind-1]) <= abs(l1[ind+1]) - abs(l1[ind]):
+#                     return l1[ind-1]
+#                 else:
+#                     return l1[ind+1]
+#             else:
+#                 if abs(l1[ind]) - abs(l1[ind-1]) >= abs(l1[ind]) - abs(l1[ind+1]):
+#                     return l1[ind+1]
+#                 else:
+#                     return l1[ind-1]
+#         except IndexError:
 #             return l1[ind-1]
-#         else:
-#             return l1[ind+1]
 #
-# assert nearest_value({4, 7, 10, 11, 12, 17}, 8) == 7
-# assert nearest_value({4, 8, 10, 11, 12, 17}, 9) == 8
-# assert nearest_value({4, 9, 10, 11, 12, 17}, 9) == 9
-# assert nearest_value({4, 7, 10, 11, 12, 17}, 0) == 4
-# assert nearest_value({4, 7, 10, 11, 12, 17}, 100) == 17
-# assert nearest_value({5, 10, 8, 12, 89, 100}, 7) == 8
-# assert nearest_value({5}, 5) == 5
+#
+#
+# print(nearest_value({4, 7, 10, 11, 12, 17}, 8))
+# print(nearest_value({4, 7, 10, 11, 12, 17}, 0))
+# print(nearest_value({4, 7, 10, 11, 12, 17}, 9))
+# print(nearest_value({-6, -2, 4, 7, 12, 17}, -4))
+# print(nearest_value({4, 7, 10, 11, 12, 17}, 100))
+# print(nearest_value({-1,2,3},0))
 
-def nearest_value(values: set, one: int):
-    if one in values:
-        return one
+
+# def nearest_value(values: set, one: int) -> int:
+#     return min(sorted(values), key=lambda i: abs(i - one))
+#
+#
+# if __name__ == '__main__':
+#     print("Example:")
+#     print(nearest_value({4, 7, 10, 11, 12, 17}
+
+
+
+def remove_all_before(items: list, border: int):
+    if border not in items:
+        return items
+    elif len(items) == 0:
+        return items
     else:
-        values.add(one)
-        l1 = list(values)
-        l1.sort()
-        ind = l1.index(one)
-        if abs(l1[ind]) - abs(l1[ind-1]) >= abs(l1[ind]) - abs(l1[ind+1]):
-            return l1[ind-1]
-        else:
-            return l1[ind+1]
+        lis = []
+        for i in items:
+            if i >= border:
+                lis.append(i)
+        return lis
 
-print(nearest_value({4, 7, 10, 11, 12, 17}, 8))
-print(nearest_value({-6, -2, 4, 7, 12, 17}, -4))
+print(remove_all_before((2,3,2,1,0,4,5,5,5,6), 4))
