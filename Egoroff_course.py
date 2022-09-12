@@ -1,0 +1,1 @@
+# a,b,c = map(int, input().split())# print(a,b,c,end='',sep=',')## a=int(input())# print((a-1),a,(a+1),sep=' < ')## a = int(input())# print('%s < %s < %s'%(a-1, a, a+1))## n = int(input())# print(f'{n - 1} < {n} < {n + 1}')print('Гвидо', 'Ван', 'Россум', sep='*', end='-')print('Основатель', 'Питона', sep='_', end='!')
