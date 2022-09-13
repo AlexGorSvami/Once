@@ -35,6 +35,13 @@
 
                         # Fifth:
 
+if __name__ == '__main__':
+    list_ = []
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
+for i in range(n):
 
 
 

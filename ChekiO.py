@@ -46,15 +46,10 @@
 
 
 def remove_all_before(items: list, border: int):
-    if border not in items:
-        return items
-    elif len(items) == 0:
-        return items
-    else:
-        lis = []
-        for i in items:
-            if i >= border:
-                lis.append(i)
-        return lis
-
-print(remove_all_before((2,3,2,1,0,4,5,5,5,6), 4))
+        if border in items:
+            ind = items.index(border)
+            del items[0:ind]
+            return items
+        else:
+            return items
+print(remove_all_before([2,3,2,1,0,4,5,5,5,6], 4))

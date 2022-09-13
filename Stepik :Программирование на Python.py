@@ -1,0 +1,1 @@
+def modify_list(list_):    new_list = []    for i in list_:        if i % 2 == 0:            new_list.append(i // 2)    list_[:] = []    list_.extend(new_list)def modify_list(l):    l[:] = [i//2 for i in l if not i % 2]
