@@ -1,0 +1,1 @@
+# ХОД КОРОЛЯ:# a,b,c,d = int(input()),int(input()),int(input()),int(input())# if (a+1 == c or a-1 == c or a == c) and (b-1 == d or b + 1 == d or b == d):#     print('YES')# else:#     print('NO')# x1 = int(input())# y1 = int(input())# x2 = int(input())# y2 = int(input())# if abs(x1 - x2) <= 1 and abs(y1 - y2) <= 1:#     print('YES')# else:#     print('NO')
