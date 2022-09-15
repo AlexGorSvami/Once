@@ -92,3 +92,17 @@
 
 # a,b,c=map(int,input().split())
 # print(a**2+b**2+c**2-max(a,b,c)**2==max(a,b,c)**2)
+
+# def replace_last(line: list) -> Iterable:
+#     if len(line) < 2:
+#         return line
+#     else:
+#         l1 = line.pop()
+#         line.insert(0,l1)
+#         return line
+
+# def first_word(text: str) -> str:
+#     return text.strip(' .,!').partition(' ')[0].partition(',')[0].partition('.')[0]
+
+
+
