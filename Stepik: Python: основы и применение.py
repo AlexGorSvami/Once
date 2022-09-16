@@ -1,0 +1,1 @@
+# objects = [1, 2, 1, 5, True, False, True, 'false', [], [1,2], [1,2]]# uniq = []## for i in objects:#     if i not in uniq:#         uniq.append(id(i))## print(len(set(uniq)))# print(len(set(map(id, objects))))## s=set()# for obj in objects:#     s.add(id(obj))# print(len(s))## print(len({id(x) for x in objects}))

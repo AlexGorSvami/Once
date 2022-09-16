@@ -104,5 +104,31 @@
 # def first_word(text: str) -> str:
 #     return text.strip(' .,!').partition(' ')[0].partition(',')[0].partition('.')[0]
 
+# import re
+#
+# def first_word(text: str) -> str:
+#     return re.search("([\w']+)", text).group(1)
+#
+#
+# first_word = lambda t: ''.join([x, ' '][x in '.,'] for x in t).split()[0]
+#
+#
+# def first_word(text: str) -> str:
+#     i = 0
+#     while i < len(text) and text[i] in ',. ':
+#         i += 1
+#     j = i
+#     while j < len(text) and text[j] not in ',. ':
+#         j += 1
+#     return text[i:j]
+
+
+def all_the_same(elements: List[Any]) -> bool:
+    if len(set(elements)) > 1:
+        return False
+    else:
+        return True
+
+
 
 
