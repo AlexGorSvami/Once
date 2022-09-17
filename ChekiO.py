@@ -123,12 +123,37 @@
 #     return text[i:j]
 
 
-def all_the_same(elements: List[Any]) -> bool:
-    if len(set(elements)) > 1:
-        return False
-    else:
-        return True
+# def all_the_same(elements: List[Any]) -> bool:
+#     if len(set(elements)) > 1:
+#         return False
+#     else:
+#         return True
+
+# return len(set(elements)) <= 1
+#
+#
+# all_the_same = lambda e: e[1:] == e[:-1]
+#
+#
+# def all_the_same(elements: List[Any]) -> bool:
+#     return all(elements[i]==elements[i+1] for i in range(len(elements)-1))
+
+
+def checkio(array: list[int]) -> int:
+    if len(array) > 0:
+        return sum(array[0::2])*array[-1]
+    return 0
+
+print( checkio([0, 1, 2, 3, 4, 5]))
+
+
+if len(array) == 0: return 0
+return sum(array[0::2]) * array[-1]
 
 
 
+checkio = lambda array: sum(array[::2]) * sum(array[-1:])
 
+
+
+return sum(array[0::2])*array[-1] if 0 < len(array) else 0
