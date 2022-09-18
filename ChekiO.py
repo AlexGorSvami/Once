@@ -139,21 +139,28 @@
 #     return all(elements[i]==elements[i+1] for i in range(len(elements)-1))
 
 
-def checkio(array: list[int]) -> int:
-    if len(array) > 0:
-        return sum(array[0::2])*array[-1]
-    return 0
+# def checkio(array: list[int]) -> int:
+#     if len(array) > 0:
+#         return sum(array[0::2])*array[-1]
+#     return 0
+#
+# print( checkio([0, 1, 2, 3, 4, 5]))
+#
+#
+# if len(array) == 0: return 0
+# return sum(array[0::2]) * array[-1]
+#
+#
+#
+# checkio = lambda array: sum(array[::2]) * sum(array[-1:])
+#
+#
+#
+# return sum(array[0::2])*array[-1] if 0 < len(array) else 0
 
-print( checkio([0, 1, 2, 3, 4, 5]))
 
-
-if len(array) == 0: return 0
-return sum(array[0::2]) * array[-1]
-
-
-
-checkio = lambda array: sum(array[::2]) * sum(array[-1:])
-
-
-
-return sum(array[0::2])*array[-1] if 0 < len(array) else 0
+def left_join(phrases: tuple) -> str:
+    if 'right' in str(phrases):
+        return str(','.join(phrases).replace('right', 'left').replace('bright', 'bleft').replace('aright', 'aleft'))
+    else:
+        return str(','.join(phrases))
