@@ -159,8 +159,28 @@
 # return sum(array[0::2])*array[-1] if 0 < len(array) else 0
 
 
-def left_join(phrases: tuple) -> str:
-    if 'right' in str(phrases):
-        return str(','.join(phrases).replace('right', 'left').replace('bright', 'bleft').replace('aright', 'aleft'))
-    else:
-        return str(','.join(phrases))
+# def left_join(phrases: tuple) -> str:
+#     if 'right' in str(phrases):
+#         return str(','.join(phrases).replace('right', 'left').replace('bright', 'bleft').replace('aright', 'aleft'))
+#     else:
+#         return str(','.join(phrases))
+
+
+# def left_join(phrases):
+#     """
+#         Join strings and replace "right" to "left"
+#     """
+#     return (",".join(phrases)).replace("right","left")
+#
+#
+# return ','.join(map(lambda x:x.replace('right','left'),phrases))
+
+
+text = "hello world"
+res = ''
+for i in range(len(text)-1,-1,-1):
+    res += text[i]
+    if i == ' ':
+        continue
+
+print(res)
