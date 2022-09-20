@@ -176,11 +176,8 @@
 # return ','.join(map(lambda x:x.replace('right','left'),phrases))
 
 
-text = "hello world"
-res = ''
-for i in range(len(text)-1,-1,-1):
-    res += text[i]
-    if i == ' ':
-        continue
 
-print(res)
+def backward_string_by_word(text:str):
+    return ' '.join([i[::-1] for i in text.split(' ')])
+
+
