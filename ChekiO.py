@@ -175,9 +175,15 @@
 #
 # return ','.join(map(lambda x:x.replace('right','left'),phrases))
 
-
+import math
 
 def backward_string_by_word(text:str):
     return ' '.join([i[::-1] for i in text.split(' ')])
 
 
+text ='\nLorem ipsum dolor sit amet,\n\nconsectetur adipiscing elit\nNam odio nisi, aliquam\nNullam ante ligula,\n \n fermentum a porta\n '
+text1 = "\nonly one line\n            ".replace('\n', '!')
+print(textL)
+a = [i for i in text.split('\n')]
+print((len([i for i in text.split('\n')])//2))
+print((len([i for i in text1.split('\n\n')])))
