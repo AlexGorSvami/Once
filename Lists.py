@@ -156,8 +156,6 @@ students = ['Ivan', 'Masha', 'Sasha']
 # print(count)
 #
 
-a = [int(i) for i in input().split()]
-uniqe =
 
 
 

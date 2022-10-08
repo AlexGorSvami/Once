@@ -80,7 +80,13 @@
 #     s2 += int(input())
 # print(s1 - s2)
 
-for i in range(10+1):
-     for j in range(i, i + 1):
-         print(j,end = "")
-     print()
+# for i in range(10+1):
+#      for j in range(i, i + 1):
+#          print(j,end = "")
+#      print()
+
+n = int(input())
+count = 0
+for i in range(1,n):
+    count += int(input())
+print(count())
