@@ -189,3 +189,16 @@ import math
 # print((len([i for i in text1.split('\n\n')])))
 
 
+# def sum_numbers(text: str) -> int:
+#     l = list(text.split())
+#     l1 = []
+#     for i in l:
+#         if i.isdigit():
+#             l1.append(int(i))
+#     return sum(l1)
+
+
+# def sum_numbers(text):
+#     return print(sum(map(int, filter(str.isdigit, text.split()))))
+
+
