@@ -21,3 +21,6 @@ if __name__ == '__main__':
     pprint(reddit.get_popular_videos())
     ya = YandexDisk(token="")
     ya.upload_file_to_disk("test/netology", "test.txt")
+
+
+    if __name__ == '__main__' # ТОЧКА ВХОДА В ПРОГРАММУ!!!!!!!!!
