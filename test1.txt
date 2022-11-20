@@ -1,5 +1,0 @@
-World
-Hello
-String1
-String2
-String 3
