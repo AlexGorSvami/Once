@@ -80,3 +80,53 @@
 # print(len(login := input()) > 4 and len(password := input()) > 8 and password != login)
 # print(len(login := input()) > 4 and len(password := input()) > 8 and password != login)
 
+
+# password = 'admin'
+#
+# match password:
+#      case 'admin111':
+#         print(f'Admin password')
+#      case 'user111':
+#         print(f'user password')
+#      case 'moder111':
+#         print(f'Moder password')
+#      case _:
+#         print(f'password error')
+#
+# print('Complete')
+
+
+# role = 'user'
+#
+# match role:
+#     case 'user':
+#         print(f'{role}, your level 1')
+#     case 'verified':
+#         print(f'{role}, your level 2')
+#     case 'holder':
+#         print(f'{role}, your level 3')
+#     case 'creator':
+#         print(f'{role}, your level 4')
+#     case _:
+#         print(f'{role}, nor a role')
+#
+# print(f'Finish')
+
+
+# match framework := input():
+#     case 'Flask' | 'Django' | 'Fast-API':
+#         print(f'Python({framework}),Backend-dev')
+#     case 'Angular' | 'React' | 'Vue':
+#         print(f'JavaScript/TypeScript({framework}),Frontend-dev')
+#     case 'Flutter' | 'React Native':
+#         print(f'JavaScript({framework}),Cross-Mobile-dev')
+#     case 'Pandas' | 'skit-learn' | 'keras':
+#         print(f'Python({framework}),Data-Scientist')
+#     case _:
+#         print('модель еще не обучена')
+
+
+
+
+
+
