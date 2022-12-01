@@ -132,13 +132,26 @@
 #     n -= 1
 # print(factorial)
 
+# n = int(input())
+# factorial = 1
+#
+# for i in range(2, n+1):
+#     factorial *=i
+#
+# print(factorial)
+
 n = int(input())
-factorial = 1
+p = []
 
-for i in range(2, n+1):
-    factorial *=i
+for i in range(n):
+    row = [1] * (i+1)
+    for j in range(i+1):
+        if j != 0 and j != i:
+            row[j] = p[i-1][j-1] + p[i-1][j]
+    p.append(row)
 
-print(factorial)
+for r in p:
+    print(*r, sep='')
 
 
 
