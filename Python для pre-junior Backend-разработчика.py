@@ -140,18 +140,35 @@
 #
 # print(factorial)
 
-n = int(input())
-p = []
+# n = int(input())
+# p = []
+#
+# for i in range(n):
+#     row = [1] * (i+1)
+#     for j in range(i+1):
+#         if j != 0 and j != i:
+#             row[j] = p[i-1][j-1] + p[i-1][j]
+#     p.append(row)
+#
+# for r in p:
+#     print(*r, sep='')
 
-for i in range(n):
-    row = [1] * (i+1)
-    for j in range(i+1):
-        if j != 0 and j != i:
-            row[j] = p[i-1][j-1] + p[i-1][j]
-    p.append(row)
 
-for r in p:
-    print(*r, sep='')
+num = int(input())
+def convert_base(num, to_base=5, from_base=10):
+    # first convert to decimal number
+    if isinstance(num, str):
+        n = int(num, from_base)
+    else:
+        n = int(num)
+    # now convert decimal to 'to_base' base
+    alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    if n < to_base:
+        return alphabet[n]
+    else:
+        return convert_base(n // to_base, to_base) + alphabet[n % to_base]
+
+print(convert_base(num))
 
 
 
