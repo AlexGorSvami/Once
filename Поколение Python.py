@@ -56,32 +56,57 @@
 
 # --------------------------------Тема урока: вложенные циклы-----------------------------------------
 
-n = int(input())
-for i in range(1,n+1):
-    for j in range(5):
-        print(i, end=' ')
-    print()
+# n = int(input())
+# for i in range(1,n+1):
+#     for j in range(5):
+#         print(i, end=' ')
+#     print()
+#
+#
+# n = int(input())
+# for i in range(1, n + 1):
+#     for j in range(1, 10):
+#         print(i, '+', j, '=', i + j)
+#     print()
+#
+#
+# n = int(input())
+# for i in range(n//2+2):
+#     print('*' * i)
+# for i in range(n//2,0,-1):
+#     print('*' * i)
+#
+#
+# n = int(input())
+#
+# for i in range(n):
+#     k = (n // 2 + 1) - abs(n // 2 - i)
+#     for _ in range(k):
+#         print('*', end='')
+#     print()
 
 
-n = int(input())
-for i in range(1, n + 1):
-    for j in range(1, 10):
-        print(i, '+', j, '=', i + j)
-    print()
+# n = int(input())
+# for i in range(1,n+1):
+#     for j in range(1,i+1):
+#         print(i, end='')
+#     print()
+#
+
+# total = 0
+# for n in range(15):
+#     for k in range(10):
+#         for m in range(10):
+#             if 28 * n + 30 * k + 31 * m == 365:
+#                 total +=1
+#                 print(n,k,m)
+#                 print(total)
 
 
-n = int(input())
-for i in range(n//2+2):
-    print('*' * i)
-for i in range(n//2,0,-1):
-    print('*' * i)
-
-
-n = int(input())
-
-for i in range(n):
-    k = (n // 2 + 1) - abs(n // 2 - i)
-    for _ in range(k):
-        print('*', end='')
-    print()
-
+# n = int(input())
+# num = 1
+# for row in range(1,n+1):
+#     for col in range(1,row+1):
+#         print(num, end=' ')
+#         num +=1
+#     print()
