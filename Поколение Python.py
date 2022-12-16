@@ -110,3 +110,26 @@
 #         print(num, end=' ')
 #         num +=1
 #     print()
+
+
+n = int(input())
+for i in range(1,n+1):
+    for j in range(i):
+        print(j+1,end='')
+    for k in range(i-1,0,-1):
+        print(k,end='')
+    print()
+
+a = int(input())
+b = int(input())
+summ = 0
+maxx = 0
+for x in range(a,b+1):
+    count = 0
+    for i in range(1,x+1):
+        if x % i == 0:
+            count +=i
+            if count >= summ:
+                summ = count
+                maxx = x
+print(maxx, summ)
