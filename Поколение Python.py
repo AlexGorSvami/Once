@@ -112,24 +112,64 @@
 #     print()
 
 
-n = int(input())
-for i in range(1,n+1):
-    for j in range(i):
-        print(j+1,end='')
-    for k in range(i-1,0,-1):
-        print(k,end='')
-    print()
+# n = int(input())
+# for i in range(1,n+1):
+#     for j in range(i):
+#         print(j+1,end='')
+#     for k in range(i-1,0,-1):
+#         print(k,end='')
+#     print()
+#
+# a = int(input())
+# b = int(input())
+# summ = 0
+# maxx = 0
+# for x in range(a,b+1):
+#     count = 0
+#     for i in range(1,x+1):
+#         if x % i == 0:
+#             count +=i
+#             if count >= summ:
+#                 summ = count
+#                 maxx = x
+# print(maxx, summ)
+
+
+# n = int(input())
+# while n > 9:
+#     n = n // 10 + n % 10
+# print(n)
+
+# number = int(input())
+#
+# total = 0
+#
+# while number > 9:
+#     while number != 0:
+#         total += number % 10
+#         number //= 10
+#     number, total = total, 0
+#
+# print(number)
+
+
+# n = int(input())
+# answer = 0
+# fact = 1
+# for i in range(1,n+1):
+#     fact *= i
+#     i -= 1
+#     answer +=fact
+# print(answer)
+
 
 a = int(input())
 b = int(input())
-summ = 0
-maxx = 0
-for x in range(a,b+1):
+for i in range(a,b+1):
     count = 0
-    for i in range(1,x+1):
-        if x % i == 0:
-            count +=i
-            if count >= summ:
-                summ = count
-                maxx = x
-print(maxx, summ)
+    for j in range(1,i+1):
+        if i % j == 0:
+            count += 1
+    if count == 2:
+        print(i)
+
