@@ -171,26 +171,42 @@
 # print(convert_base(num))
 
 
-n1, n2, n3, n4 = [int(i) for i in input().split('.')]
-flag = True
-def convert_base(num, to_base=2, from_base=10):
-    # first convert to decimal number
-    if isinstance(num, str):
-        n = int(num, from_base)
-    else:
-        n = int(num)
-    # now convert decimal to 'to_base' base
-    alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    if n < to_base:
-        return alphabet[n]
-    else:
-        return convert_base(n // to_base, to_base) + alphabet[n % to_base]
+# n1, n2, n3, n4 = [int(i) for i in input().split('.')]
+# flag = True
+# def convert_base(num, to_base=2, from_base=10):
+#     # first convert to decimal number
+#     if isinstance(num, str):
+#         n = int(num, from_base)
+#     else:
+#         n = int(num)
+#     # now convert decimal to 'to_base' base
+#     alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+#     if n < to_base:
+#         return alphabet[n]
+#     else:
+#         return convert_base(n // to_base, to_base) + alphabet[n % to_base]
+#
+# res = convert_base(n1) + convert_base(n2) + convert_base(n3) + convert_base(n4)
+# for i in range(len(res)-1):
+#     if res[i] == '0' and res[i+1] == '1':
+#         flag = False
+#         break
+# print(flag)
 
-res = convert_base(n1) + convert_base(n2) + convert_base(n3) + convert_base(n4)
-for i in range(len(res)-1):
-    if res[i] == '0' and res[i+1] == '1':
-        flag = False
-        break
-print(flag)
+s = input()
+step = int(input())
+for i in s:
+    if i == 'x':
+        print('a',end='')
+    elif i == 'y':
+        print('b',end='')
+    elif i == 'z':
+        print('c',end='')
+    else:
+        print(chr(ord(i)+step),end='')
 
+print(ord('x'))
+print(ord('y'))
+print(ord('z'))
+print(ord('a'))
 
