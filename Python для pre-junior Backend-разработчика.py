@@ -210,3 +210,13 @@ print(ord('y'))
 print(ord('z'))
 print(ord('a'))
 
+
+import operator
+from functools import reduce
+
+print(reduce(operator.mul, [int(i) for i in input().split()]))
+
+from functools import reduce
+print(reduce(lambda x, y: int(x) * int(y), input().split()))
+
+print(eval('*'.join(input().split())))
