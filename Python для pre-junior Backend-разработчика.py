@@ -220,3 +220,11 @@ from functools import reduce
 print(reduce(lambda x, y: int(x) * int(y), input().split()))
 
 print(eval('*'.join(input().split())))
+
+
+a = {int(i) for i in input().split()}
+res = list(a)
+res.sort()
+print(res[-2])
+
+print(sorted(set(map(int, input().split())))[-2])
