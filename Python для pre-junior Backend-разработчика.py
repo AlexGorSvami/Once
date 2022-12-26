@@ -193,38 +193,70 @@
 #         break
 # print(flag)
 
-s = input()
-step = int(input())
-for i in s:
-    if i == 'x':
-        print('a',end='')
-    elif i == 'y':
-        print('b',end='')
-    elif i == 'z':
-        print('c',end='')
-    else:
-        print(chr(ord(i)+step),end='')
+# s = input()
+# step = int(input())
+# for i in s:
+#     if i == 'x':
+#         print('a',end='')
+#     elif i == 'y':
+#         print('b',end='')
+#     elif i == 'z':
+#         print('c',end='')
+#     else:
+#         print(chr(ord(i)+step),end='')
+#
+# print(ord('x'))
+# print(ord('y'))
+# print(ord('z'))
+# print(ord('a'))
+#
+#
+# import operator
+# from functools import reduce
+#
+# print(reduce(operator.mul, [int(i) for i in input().split()]))
+#
+# from functools import reduce
+# print(reduce(lambda x, y: int(x) * int(y), input().split()))
+#
+# print(eval('*'.join(input().split())))
+#
+#
+# a = {int(i) for i in input().split()}
+# res = list(a)
+# res.sort()
+# print(res[-2])
+#
+# print(sorted(set(map(int, input().split())))[-2])
 
-print(ord('x'))
-print(ord('y'))
-print(ord('z'))
-print(ord('a'))
 
+# a = [int(i) for i in input().split()]
+# for i in range(len(a)):
+#     a.remove(0)
+#     a.append(0)
+# print(*a)
+#
+# a = [int(i) for i in input().split()]
+# new = sorted(a, key=lambda n: n != 0, reverse=True)
+# print(*new)
+#
+#
+# print(*sorted(map(int, input().split()),key=lambda x: x==0))
+#
+# print(*[int(i) for i in input().split() if i % 2 == 0])
+#
+# print(*filter(lambda x: x % 2 == 0, map(int, input().split())))
 
-import operator
-from functools import reduce
+import math
 
-print(reduce(operator.mul, [int(i) for i in input().split()]))
+a = sorted([6, 2, 3])
+l = len(a) + 1
+l2 = 0
+if (l + 1) % 2 == 0:
+    l = len(a) // 2 - 1
+    l2 = len(a) // 2 + 1
+    print(int((a[l] + a[l2]) / 2))
+else:
+    l = math.floor(l / 2)
+    print(a[l])
 
-from functools import reduce
-print(reduce(lambda x, y: int(x) * int(y), input().split()))
-
-print(eval('*'.join(input().split())))
-
-
-a = {int(i) for i in input().split()}
-res = list(a)
-res.sort()
-print(res[-2])
-
-print(sorted(set(map(int, input().split())))[-2])
