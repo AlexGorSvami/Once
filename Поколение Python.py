@@ -163,13 +163,42 @@
 # print(answer)
 
 
-a = int(input())
-b = int(input())
-for i in range(a,b+1):
-    count = 0
-    for j in range(1,i+1):
-        if i % j == 0:
-            count += 1
-    if count == 2:
-        print(i)
+# a = int(input())
+# b = int(input())
+# for i in range(a,b+1):
+#     count = 0
+#     for j in range(1,i+1):
+#         if i % j == 0:
+#             count += 1
+#     if count == 2:
+#         print(i)
 
+n = int(input())
+count3 = 0
+last = n % 10
+lastcount = 0
+chetcount = 0
+sum_ = 0
+more7 = 1
+count05 = 0
+while n > 0:
+    last1 = n % 10
+    if last1 == 3:
+        count3 +=1
+    elif last1 == last:
+        lastcount += 1
+    elif last1 % 2 == 0:
+        chetcount += 1
+    elif last1 > 5:
+        sum_ += last1
+    elif last1 > 7:
+        more7 *= last1
+    elif last1 == 0 or last1 == 5:
+        count05 += 1
+            n //=10
+print(count3)
+print(lastcount)
+print(chetcount)
+print(sum_)
+print(more7)
+print(count05)
