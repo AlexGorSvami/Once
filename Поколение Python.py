@@ -173,32 +173,47 @@
 #     if count == 2:
 #         print(i)
 
-n = int(input())
-count3 = 0
-last = n % 10
-lastcount = 0
-chetcount = 0
-sum_ = 0
-more7 = 1
-count05 = 0
-while n > 0:
-    last1 = n % 10
-    if last1 == 3:
-        count3 +=1
-    elif last1 == last:
-        lastcount += 1
-    elif last1 % 2 == 0:
-        chetcount += 1
-    elif last1 > 5:
-        sum_ += last1
-    elif last1 > 7:
-        more7 *= last1
-    elif last1 == 0 or last1 == 5:
-        count05 += 1
-            n //=10
-print(count3)
-print(lastcount)
-print(chetcount)
-print(sum_)
-print(more7)
-print(count05)
+# n = int(input())
+# count3 = 0
+# last = n % 10
+# lastcount = 0
+# chetcount = 0
+# sum_ = 0
+# more7 = 1
+# count05 = 0
+# while n > 0:
+#     last1 = n % 10
+#     if last1 == 3:
+#         count3 +=1
+#     if last1 == last:
+#         lastcount += 1
+#     if last1 % 2 == 0:
+#         chetcount += 1
+#     if last1 > 5:
+#         sum_ += last1
+#     if last1 > 7:
+#         more7 *= last1
+#     if last1 == 0 or last1 == 5:
+#         count05 += 1
+#             n //=10
+# print(count3)
+# print(lastcount)
+# print(chetcount)
+# print(sum_)
+# print(more7)
+# print(count05)
+
+# for a in range(1,34):
+#     for b in range(1,34):
+#         for c in range(1, 34):
+#             for d in range(1, 34):
+#                 if a **3 + b **3 == c**3 + d**3 and  a != b and a != c and a != d and b != c and b != d and c != d:
+#                     print(a**3 + b**3)
+
+s = '01234567891011121314151617'
+for i in range(0, len(s), 5):
+    print(s[i], end='')
+
+
+print('Цифра' if [i for i in input() if i.isdigit()] else 'Цифр нет')
+

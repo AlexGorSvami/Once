@@ -247,16 +247,33 @@
 #
 # print(*filter(lambda x: x % 2 == 0, map(int, input().split())))
 
-import math
+# import math
+#
+# a = sorted([6, 2, 3])
+# l = len(a) + 1
+# l2 = 0
+# if (l + 1) % 2 == 0:
+#     l = len(a) // 2 - 1
+#     l2 = len(a) // 2 + 1
+#     print(int((a[l] + a[l2]) / 2))
+# else:
+#     l = math.floor(l / 2)
+#     print(a[l])
 
-a = sorted([6, 2, 3])
-l = len(a) + 1
-l2 = 0
-if (l + 1) % 2 == 0:
-    l = len(a) // 2 - 1
-    l2 = len(a) // 2 + 1
-    print(int((a[l] + a[l2]) / 2))
-else:
-    l = math.floor(l / 2)
-    print(a[l])
 
+commands = ['git push origin main']
+
+for command in commands:
+    match command.split():
+        case 'git', 'add', path:
+            print(f'В индекс добавлены файлы по пути: {path}.')
+        case 'git', 'commit':
+            print('Файлы закоммичены.')
+        case 'git', 'commit', '-m', message:
+            print(f'Файлы закоммичены с сообщением {message}')
+        case 'git', 'push', repository, branch:
+            print(f'Файлы запушены в {repository} в ветку {branch}.')
+        case _:
+            print('Неизвестная команда.')
+
+print(69,53/13,3)
