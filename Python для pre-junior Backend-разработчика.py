@@ -282,11 +282,15 @@
 #     a.add(i)
 # print(len(a)+1)
 
-print(
-    len(
-        {
-            i.replace('b','d',1) if i.startswith('b') else i.replace('c','')
-            for i in ['aa','bbb','cccc', 'bacbac'] if len(i) > 2
-        }
-    )
-)
+# print(
+#     len(
+#         {
+#             i.replace('b','d',1) if i.startswith('b') else i.replace('c','')
+#             for i in ['aa','bbb','cccc', 'bacbac'] if len(i) > 2
+#         }
+#     )
+# )
+
+
+a,b,c = [set(input().split()) for i in range(3)]
+print(c - b == a)
