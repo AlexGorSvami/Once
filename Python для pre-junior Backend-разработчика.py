@@ -294,3 +294,20 @@
 
 a,b,c = [set(input().split()) for i in range(3)]
 print(c - b == a)
+
+
+s = input().split()
+a = {i: s.count(i) for i in s}
+sort = sorted(a.items(), key=lambda x: x[0])
+a = dict(sort)
+for key,values in a.items():
+    print(key,values)
+
+s = input().split()
+d = {}
+for i in s:
+    if i not in d:
+        d[i] = 0
+    d[i] += 1
+for key, value in sorted(d.items()):
+    print(key, value)
