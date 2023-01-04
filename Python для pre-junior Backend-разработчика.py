@@ -292,22 +292,36 @@
 # )
 
 
-a,b,c = [set(input().split()) for i in range(3)]
-print(c - b == a)
+# a,b,c = [set(input().split()) for i in range(3)]
+# print(c - b == a)
+#
+#
+# s = input().split()
+# a = {i: s.count(i) for i in s}
+# sort = sorted(a.items(), key=lambda x: x[0])
+# a = dict(sort)
+# for key,values in a.items():
+#     print(key,values)
+#
+# s = input().split()
+# d = {}
+# for i in s:
+#     if i not in d:
+#         d[i] = 0
+#     d[i] += 1
+# for key, value in sorted(d.items()):
+#     print(key, value)
 
 
-s = input().split()
-a = {i: s.count(i) for i in s}
-sort = sorted(a.items(), key=lambda x: x[0])
-a = dict(sort)
-for key,values in a.items():
-    print(key,values)
+# import json
+# answer = 0
+# d = json.loads(input())
+# for i in range(len(d)):
+#     if d[i]['age'] > answer:
+#         answer = d[i]['age']
+#         if d[i]['chief']['age'] > answer:
+#             answer = d[i]['chief']['age']
+# print(answer)
 
-s = input().split()
-d = {}
-for i in s:
-    if i not in d:
-        d[i] = 0
-    d[i] += 1
-for key, value in sorted(d.items()):
-    print(key, value)
+
+print({i if i == 24 else 'ff': i*i for i in [j for j in range(100)] if i % 17 == 0}['ff'])
