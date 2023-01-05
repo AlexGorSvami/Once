@@ -54,37 +54,46 @@
 #         b = i
 # print(b)
 
-a = input()[::-1]
-z = max(a, key = a.count)
-print(z)
+# a = input()[::-1]
+# z = max(a, key = a.count)
+# print(z)
+#
+#
+# s = input()
+# if s.count('f') > 1:
+#     print(s.find('f'),s.rfind('f'))
+# elif s.count('f') == 1:
+#     print(s.find('f'))
+# else:
+#     print('NO')
+#
+# text = input()
+# print(text[:text.find("h")] + text[text.rfind("h") + 1:])
+#
+# print(*[chr(i) for i in range(int(input()), int(input())+1)])
+#
+# cod = int(input())
+# s = input()
+# for i in s:
+#     dec = ord(i)-cod
+#     if dec < 97:
+#         dec += 26
+#     print(chr(dec), end='')
+#
+#
+# n = int(input())
+# s = input()
+# res = ''
+# alphabet = 'abcdefghijklmnopqrstuvwxyz'
+# for i in range(len(s)):
+#     res += alphabet[alphabet.find(s[i])-n]
+# print(res)
 
 
-s = input()
-if s.count('f') > 1:
-    print(s.find('f'),s.rfind('f'))
-elif s.count('f') == 1:
-    print(s.find('f'))
-else:
-    print('NO')
+from string import ascii_lowercase
 
-text = input()
-print(text[:text.find("h")] + text[text.rfind("h") + 1:])
+tot = []
+for i in range(1, 27):
+    tot.append(i * ascii_lowercase[i - 1])
 
-print(*[chr(i) for i in range(int(input()), int(input())+1)])
-
-cod = int(input())
-s = input()
-for i in s:
-    dec = ord(i)-cod
-    if dec < 97:
-        dec += 26
-    print(chr(dec), end='')
-
-
-n = int(input())
-s = input()
-res = ''
-alphabet = 'abcdefghijklmnopqrstuvwxyz'
-for i in range(len(s)):
-    res += alphabet[alphabet.find(s[i])-n]
-print(res)
+print(tot)
