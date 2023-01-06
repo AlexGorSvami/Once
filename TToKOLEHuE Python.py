@@ -97,3 +97,87 @@ for i in range(1, 27):
     tot.append(i * ascii_lowercase[i - 1])
 
 print(tot)
+
+n = int(input())
+catalog = []
+for i in range(n):
+    catalog.append(int(input()))
+
+print(*catalog, sep='\n')
+print()
+for i in catalog:
+    print(i ** 2 + i * 2 + 1)
+
+numbers = [int(input()) for _ in range(int(input()))]
+print(*numbers, '',*[(x + 1) ** 2 for x in numbers], sep='\n')
+
+
+
+n = int(input())
+catalog = []
+for i in range(n):
+    catalog.append(int(input()))
+catalog.remove(max(catalog))
+catalog.remove(min(catalog))
+print(*catalog, sep='\n')
+
+
+ls = [int(input()) for _ in range(int(input()))]
+[print(i) for i in ls if i not in (max(ls), min(ls))]
+
+
+a = [int(input()) for i in range(int(input()))]
+for i in a:
+    if  min(a) < i < max(a):
+        print(i)
+
+
+catalog = [input() for i in range(int(input()))]
+list = []
+for i in catalog:
+    if i not in list:
+        list.append(i)
+print(*list, sep='\n')
+
+
+s = [input() for _ in range(int(input()))]
+print(*[s[i] for i in range(len(s)) if s[:i].count(s[i]) == 0], sep="\n")
+
+
+catalog = [input() for i in range(int(input()))]
+word = input()
+for i in catalog:
+    if word.lower() in i.lower():
+        print(i)
+
+s = [input() for _ in range(int(input()))]
+word = input().lower()
+print(*[i for i in s if word in i.lower()], sep='\n')
+
+
+n = int(input())
+x = [int(input()) for _ in range(n)]
+[print(i) for i in x if i < 0]
+[print(i) for i in x if i == 0]
+[print(i) for i in x if i > 0]
+
+ss = [input() for _ in range(int(input()))]
+reqs = [input().lower() for _ in range(int(input()))]
+print(*[s for s in ss if all(req in s.lower() for req in reqs)], sep='\n')
+
+s = [input() for _ in range(int(input()))]
+search = [input().lower() for i in range(int(input()))]
+st = ''
+for i in search:
+    if i not in st:
+        st += i+' '
+print(*[i for i in s if st in i.lower()], sep='\n')
+
+s = [input() for _ in range(int(input()))]
+d = [input() for _ in range(int(input()))]
+for i in s:
+    for j in d:
+        if j.lower() not in i.lower():
+            break
+    else:
+        print(i)
