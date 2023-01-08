@@ -192,11 +192,57 @@
 #     print('ДА')
 
 
-s = [int(i) for i in input().split()]
-couple = 0
-for i in range(len(s)):
-    for j in range(i+1,len(s)):
-        if s[i] == s[j]:
-            couple += 1
+# s = [int(i) for i in input().split()]
+# couple = 0
+# for i in range(len(s)):
+#     for j in range(i+1,len(s)):
+#         if s[i] == s[j]:
+#             couple += 1
+#
+# print(couple)
 
-print(couple)
+
+numbers = [8, 9, 10, 11]
+numbers[1] = 17
+numbers.extend([4,5,6])
+del numbers[0]
+numbers *= 2
+numbers.insert(3,25)
+print(numbers)
+
+
+catalog = [int(i) for i in input().split()]
+ma = catalog.index(max(catalog))
+mi = catalog.index(min(catalog))
+if len(catalog) > 1:
+    catalog[mi],catalog[ma] = catalog[ma], catalog[mi]
+
+print(*catalog)
+
+
+s = input().split()
+print(f"Общее количество артиклей: {s.count('a') + s.count('an') + s.count('the')}")
+
+
+n1 = input()
+n = int(n1[1:])
+for i in range(n):
+    s = input()
+    if '#' in s:
+        s = s[:s.find('#')].rstrip()
+        print(s)
+    else:
+        print(s)
+
+
+n = input()
+for _ in range(int(n[1:])):
+    s = input()
+    if '#' in s:
+        s = s[:s.find('#')]
+    print(s.rstrip())
+
+
+print(*map(lambda i: i.split('#')[0].rstrip(), __import__('sys').stdin.read().splitlines()[1:]), sep='\n')
+
+print(*[input().split('#')[0].rstrip() for i in range(int(input()[1:]))], sep='\n')
