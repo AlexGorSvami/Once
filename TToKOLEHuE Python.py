@@ -303,5 +303,33 @@
 # print('Отсортированный список:', a)
 
 
-a = [int(i) for i in input().split()]
-print(*a,sep='+',end=f'={sum(a)}')
+# [print('YES' if all([i.isdigit() for i in n]) and (n[0] == '7' or len(n[0]) == 3) and len(n[-1]) == 4 and len(n[-2]) == 3 else 'NO') for n in [input().split('-')]]
+#
+#
+# a = [int(i) for i in input().split()]
+# print(*a,sep='+',end=f'={sum(a)}')
+
+
+# # объявление функции
+# def draw_box():
+#     print('*' * 10)
+#     for i in range(12):
+#             print('*','*',sep='        ')
+#     print('*' * 10)
+# # основная программа
+# draw_box()  # вызов функции
+
+
+# объявление функции
+def draw_triangle(fill, base):
+    for i in range(base // 2 + 2):
+        print(i * fill)
+    for i in range(base // 2, 0, -1):
+        print(i * fill)
+
+# считываем данные
+fill = input()
+base = int(input())
+
+# вызываем функцию
+draw_triangle(fill, base)
