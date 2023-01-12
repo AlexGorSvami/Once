@@ -324,11 +324,34 @@
 # print(answer)
 
 
-print({i if i == 24 else 'ff': i*i for i in [j for j in range(100)] if i % 17 == 0}['ff'])
+# print({i if i == 24 else 'ff': i*i for i in [j for j in range(100)] if i % 17 == 0}['ff'])
+#
+# catalog = []
+# while (n := int(input())) != -1:
+#     catalog.append(n)
+#
+# for i in catalog[::-1]:
+#     print(i)
 
-catalog = []
-while (n := int(input())) != -1:
-    catalog.append(n)
 
-for i in catalog[::-1]:
-    print(i)
+command = input().split()
+stek = []
+while command[0] != 'close':
+    if command[0] == 'add':
+        stek.append(command[int(1)])
+    if command[0] == 'pop':
+        print(stek.pop())
+    if command[0] == 'head':
+        print(stek[-1])
+    command = input().split()
+
+
+
+while (command := input()) != "close":
+    match command.split():
+        case "add", n:
+            stack.append(n)
+        case "pop",:
+            print(stack.pop())
+        case "head",:
+            print(stack[-1])

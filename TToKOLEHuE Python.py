@@ -320,16 +320,88 @@
 # draw_box()  # вызов функции
 
 
-# объявление функции
-def draw_triangle(fill, base):
-    for i in range(base // 2 + 2):
-        print(i * fill)
-    for i in range(base // 2, 0, -1):
-        print(i * fill)
+# # объявление функции
+# def draw_triangle(fill, base):
+#     for i in range(base // 2 + 2):
+#         print(i * fill)
+#     for i in range(base // 2, 0, -1):
+#         print(i * fill)
+#
+# # считываем данные
+# fill = input()
+# base = int(input())
+#
+# # вызываем функцию
+# draw_triangle(fill, base)
 
-# считываем данные
-fill = input()
-base = int(input())
 
-# вызываем функцию
-draw_triangle(fill, base)
+# def get_factors(num):
+#     cat = []
+#     for i in range(1, num + 1):
+#         if num % i == 0:
+#             cat.append(i)
+#     return cat
+#
+# def get_factors(num):
+#     return [i for i in range(1, int(num / 2) + 1) if num % i == 0] + [num]
+#
+# print(get_factors(10))
+#
+#
+# def number_of_factors(num):
+#     return len([i for i in range(1, num + 1) if num % i == 0])
+#
+
+# def find_all(target, symbol):
+#     cat = []
+#     for i in range(len(target)):
+#         if target[i] == symbol:
+#             cat.append(i)
+#     return cat
+
+# def merge(list1, list2):
+#     return sorted(list1 + list2)
+
+
+# def quick_merge(list1, list2):
+#     result = []
+#
+#     p1 = 0
+#     p2 = 0
+#
+#     while p1 < len(list1) and p2 < len(list2):
+#         if list1[p1] <= list2[p2]:
+#             result.append(list1[p1])
+#             p1 += 1
+#         else :
+#             result.append(list2[p2])
+#             p2 += 1
+#
+#     if p1 < len(list1):
+#         result +=(list1[p1:])
+#     if p2 < len(list2):
+#         result += (list1[p1:])
+#
+#     return result
+#
+#
+# list1 = [3, 10, 11, 12, 47, 57, 58, 63, 77, 79, 80, 95]
+# list2 = [0, 11, 12, 20, 24, 26, 47, 48, 53, 65, 70, 81, 84, 84, 90]
+# print(quick_merge(list1, list2))
+
+
+n = int(input())
+cat = []
+for i in range(n):
+    cat.append([int(i) for i in input().split()])
+def quick_merge(cat):
+    return print(*sorted([i for j in cat  for i in j]))
+
+
+quick_merge(cat)
+
+
+n=int(input())
+def quick_merge(n):
+    return sorted([int(i) for i in range(n) for i in input().split()])
+print(*quick_merge(n))
