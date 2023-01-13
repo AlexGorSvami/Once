@@ -390,18 +390,115 @@
 # print(quick_merge(list1, list2))
 
 
-n = int(input())
-cat = []
-for i in range(n):
-    cat.append([int(i) for i in input().split()])
-def quick_merge(cat):
-    return print(*sorted([i for j in cat  for i in j]))
+# n = int(input())
+# cat = []
+# for i in range(n):
+#     cat.append([int(i) for i in input().split()])
+# def quick_merge(cat):
+#     return print(*sorted([i for j in cat  for i in j]))
+#
+#
+# quick_merge(cat)
+#
+#
+# n=int(input())
+# def quick_merge(n):
+#     return sorted([int(i) for i in range(n) for i in input().split()])
+# print(*quick_merge(n))
 
 
-quick_merge(cat)
+# объявление функции
+# def is_prime(num):
+#     count = 0
+#     for i in range(1,num+1):
+#         if num % i == 0:
+#             count += 1
+#     if count == 2:
+#         return True
+#     else:
+#         return False
+#
+# # считываем данные
+# n = int(input())
+#
+# # вызываем функцию
+# print(is_prime(n))
+#
+# def is_prime(num):
+#     return len([i for i in range(1, num+1) if num % i == 0]) == 2
 
 
-n=int(input())
-def quick_merge(n):
-    return sorted([int(i) for i in range(n) for i in input().split()])
-print(*quick_merge(n))
+# def get_next_prime(num):
+#     for i in range(num+1,99999):
+#         if len([j for j in range(1, i+1) if i % j == 0]) == 2:
+#             return i
+#
+#
+# def get_next_prime(num):
+#     num += 1
+#     for i in range(2, num):
+#         if num % i == 0:
+#             return get_next_prime(num)
+#     return num
+
+
+# def is_password_good(password):
+#     if len(password) < 8:
+#         return False
+#     flag1 = False
+#     flag2 = False
+#     flag3 = False
+#     for c in password:
+#         if c.isupper():
+#             flag1 = True
+#         elif c.islower():
+#             flag2 = True
+#         elif c.isdigit():
+#             flag3 = True
+#     return flag1 and flag2 and flag3
+#
+#
+# def is_password_good(password):
+#     upp = [i for i in password if i.isupper()]
+#     low = [i for i in password if i.islower()]
+#     dig = [i for i in password if i.isdigit()]
+#     return all([len(password) >= 8, upp, low, dig])
+#
+#
+# def is_password_good(password):
+#     if len(password) < 8:
+#         return False
+#     if password.isupper() or password.islower() or password.isalpha() or password.isdigit():
+#         return False
+#
+#     return True
+
+
+# def is_one_away(word1, word2):
+#     count = 1
+#     if len(word1) != len(word2):
+#         return False
+#     else:
+#         for i in range(len(word1)):
+#             if word1[i] == word2[i]:
+#                 count += 1
+#         if count == len(word1):
+#             return True
+#         else:
+#             return False
+
+def is_one_away(word1, word2):
+    return len([i for i in word1 if i not in word2]) == 1 and len(word1) == len(word2)
+
+print(is_one_away('bike', 'hike'))
+
+text = 'Standart - smallest, sell Amstrad nats.'
+text1 = text.lower().strip('?!.,').replace(' ', '').replace('-','').replace(',','').replace('.','').replace('?','')
+print(text1)
+print(text1[::-1])
+print(text1 == text1[::-1])
+
+
+def is_palindrome(text):
+    text = [i.lower() for i in text if i not in (',.!?- ')]
+    return text == text[::-1]
