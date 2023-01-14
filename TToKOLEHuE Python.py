@@ -487,18 +487,92 @@
 #         else:
 #             return False
 
-def is_one_away(word1, word2):
-    return len([i for i in word1 if i not in word2]) == 1 and len(word1) == len(word2)
+# def is_one_away(word1, word2):
+#     return len([i for i in word1 if i not in word2]) == 1 and len(word1) == len(word2)
+#
+# print(is_one_away('bike', 'hike'))
+#
+# text = 'Standart - smallest, sell Amstrad nats.'
+# text1 = text.lower().strip('?!.,').replace(' ', '').replace('-','').replace(',','').replace('.','').replace('?','')
+# print(text1)
+# print(text1[::-1])
+# print(text1 == text1[::-1])
+#
+#
+# def is_palindrome(text):
+#     text = [i.lower() for i in text if i not in (',.!?- ')]
+#     return text == text[::-1]
 
-print(is_one_away('bike', 'hike'))
 
-text = 'Standart - smallest, sell Amstrad nats.'
-text1 = text.lower().strip('?!.,').replace(' ', '').replace('-','').replace(',','').replace('.','').replace('?','')
-print(text1)
-print(text1[::-1])
-print(text1 == text1[::-1])
+def is_valid_password(password):
+    res = password.split(':')
+    if len(res) < 4:
+        return res[0] == res[0][::-1] and int(res[1]) % 2 != 0 and int(res[2]) % 2 == 0
+    else:
+        return False
 
 
-def is_palindrome(text):
-    text = [i.lower() for i in text if i not in (',.!?- ')]
-    return text == text[::-1]
+def is_valid_password(password):
+    password = password.split(':')
+    return (password[0] == password[0][::-1]) and (len([i for i in range(1, int(password[1])+1) if int(password[1]) % i == 0]) == 2) and (int(password[2]) % 2 == 0)
+
+
+def is_valid_password(password):
+    password = password.split(':')
+    a, b, c = password[0], int(password[1]), int(password[2])
+    if len(password) != 3 or a != a[::-1] or c % 2 != 0:
+        return False
+    for i in range(2, b):
+        if b % i == 0:
+            return False
+    return True
+
+
+psw = input()
+
+print(is_valid_password(psw))
+
+
+# --------Скобочная последовательность-----------
+def is_correct_bracket(text):
+    count = 0
+    for i in text:
+        if i == '(':
+            count += 1
+        elif i == ')':
+            count += -1
+            if count < 0:
+                break
+            return False
+    return count == 0
+
+
+def is_correct_bracket(text):
+    while '()' in text:
+        text = text.replace('()', '')
+    return not text
+
+
+def convert_to_python_case(text):
+    from string import ascii_uppercase
+    res = text[0].lower()
+    for i in range(1, len(text)):
+        if text[i] in ascii_uppercase:
+            res += '_' + text[i].lower()
+        else:
+            res += text[i]
+    return res
+
+
+def convert_to_python_case(text):
+    s = ''
+    for el in text:
+        if el.isupper():
+            s += '_'
+        s += el.lower()
+    return s[1:]
+
+
+def convert_to_python_case(text):
+    return ''.join(['_' + i if i.isupper() else i for i in text]).lstrip('_').lower()
+
