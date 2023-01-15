@@ -504,75 +504,172 @@
 #     return text == text[::-1]
 
 
-def is_valid_password(password):
-    res = password.split(':')
-    if len(res) < 4:
-        return res[0] == res[0][::-1] and int(res[1]) % 2 != 0 and int(res[2]) % 2 == 0
-    else:
-        return False
-
-
-def is_valid_password(password):
-    password = password.split(':')
-    return (password[0] == password[0][::-1]) and (len([i for i in range(1, int(password[1])+1) if int(password[1]) % i == 0]) == 2) and (int(password[2]) % 2 == 0)
-
-
-def is_valid_password(password):
-    password = password.split(':')
-    a, b, c = password[0], int(password[1]), int(password[2])
-    if len(password) != 3 or a != a[::-1] or c % 2 != 0:
-        return False
-    for i in range(2, b):
-        if b % i == 0:
-            return False
-    return True
-
-
-psw = input()
-
-print(is_valid_password(psw))
+# def is_valid_password(password):
+#     res = password.split(':')
+#     if len(res) < 4:
+#         return res[0] == res[0][::-1] and int(res[1]) % 2 != 0 and int(res[2]) % 2 == 0
+#     else:
+#         return False
+#
+#
+# def is_valid_password(password):
+#     password = password.split(':')
+#     return (password[0] == password[0][::-1]) and (len([i for i in range(1, int(password[1])+1) if int(password[1]) % i == 0]) == 2) and (int(password[2]) % 2 == 0)
+#
+#
+# def is_valid_password(password):
+#     password = password.split(':')
+#     a, b, c = password[0], int(password[1]), int(password[2])
+#     if len(password) != 3 or a != a[::-1] or c % 2 != 0:
+#         return False
+#     for i in range(2, b):
+#         if b % i == 0:
+#             return False
+#     return True
+#
+#
+# psw = input()
+#
+# print(is_valid_password(psw))
 
 
 # --------Скобочная последовательность-----------
-def is_correct_bracket(text):
-    count = 0
-    for i in text:
-        if i == '(':
-            count += 1
-        elif i == ')':
-            count += -1
-            if count < 0:
-                break
-            return False
-    return count == 0
+# def is_correct_bracket(text):
+#     count = 0
+#     for i in text:
+#         if i == '(':
+#             count += 1
+#         elif i == ')':
+#             count += -1
+#             if count < 0:
+#                 break
+#             return False
+#     return count == 0
+#
+#
+# def is_correct_bracket(text):
+#     while '()' in text:
+#         text = text.replace('()', '')
+#     return not text
+#
+#
+# def convert_to_python_case(text):
+#     from string import ascii_uppercase
+#     res = text[0].lower()
+#     for i in range(1, len(text)):
+#         if text[i] in ascii_uppercase:
+#             res += '_' + text[i].lower()
+#         else:
+#             res += text[i]
+#     return res
+#
+#
+# def convert_to_python_case(text):
+#     s = ''
+#     for el in text:
+#         if el.isupper():
+#             s += '_'
+#         s += el.lower()
+#     return s[1:]
+#
+#
+# def convert_to_python_case(text):
+#     return ''.join(['_' + i if i.isupper() else i for i in text]).lstrip('_').lower()
 
 
-def is_correct_bracket(text):
-    while '()' in text:
-        text = text.replace('()', '')
-    return not text
+# # объявление функции
+# def is_pangram(text):
+#     from string import ascii_lowercase
+#     res = set(text.lower().replace(' ', ''))
+#     return res == set(ascii_lowercase)
+#
+# # считываем данные
+# text = input()
+#
+# # вызываем функцию
+# print(is_pangram(text))
+# num = 25
+# s_num = str(num)
+# d = {1: 'один', 2: 'два', 3: 'три', 4: 'четыре', 5: 'пять', 6: 'шесть', 7: 'семь', 8: 'восемь', 9: 'девять',
+#      10: 'десять', 11: 'одиннадцать', 12: 'двенадцать', 13: 'тринадцать', 14: 'четырнадцать', 15: 'пятнадцать',
+#      16: 'шестнадцать', 17: 'семнадцать', 18: 'восемнадцать', 19: 'девятнадцать', 20: 'двадцать', 30: 'тридцать',
+#      40: 'сорок', 50: 'пятьдесят', 60: 'шестьдесят', 70: 'семьдесят', 80: 'восемьдесят', 90: 'девяносто'}
+#
+# print(d[num - int(s_num[1])], d[int(s_num[1])])
 
 
-def convert_to_python_case(text):
-    from string import ascii_uppercase
-    res = text[0].lower()
-    for i in range(1, len(text)):
-        if text[i] in ascii_uppercase:
-            res += '_' + text[i].lower()
-        else:
-            res += text[i]
-    return res
+# объявление функции
+# def number_to_words(num):
+#     d = {1: 'один', 2: 'два', 3: 'три', 4: 'четыре', 5: 'пять', 6: 'шесть', 7: 'семь', 8: 'восемь', 9: 'девять', 10: 'десять', 11: 'одиннадцать', 12: 'двенадцать', 13: 'тринадцать', 14: 'четырнадцать', 15: 'пятнадцать', 16: 'шестнадцать',17: 'семнадцать', 18: 'восемнадцать', 19: 'девятнадцать', 20: 'двадцать', 30: 'тридцать', 40: 'сорок', 50: 'пятьдесят', 60: 'шестьдесят', 70: 'семьдесят', 80: 'восемьдесят', 90: 'девяносто'}
+#     s_num = str(num)
+#     if num in d:
+#         return print(d[num])
+#     else:
+#         return print(*(d[num - int(s_num[1])], d[int(s_num[1])]))
+# # считываем данные
+# n = int(input())
+#
+# # вызываем функцию
+# number_to_words(n)
 
 
-def convert_to_python_case(text):
-    s = ''
-    for el in text:
-        if el.isupper():
-            s += '_'
-        s += el.lower()
-    return s[1:]
+# def compute_binom(n, k):
+#     from math import factorial
+#     return factorial(n) / (factorial(k) * factorial(n - k))
+#
+# n = int(input())
+# k = int(input())
+#
+#
+# print(compute_binom(n, k))
 
 
-def convert_to_python_case(text):
-    return ''.join(['_' + i if i.isupper() else i for i in text]).lstrip('_').lower()
 
+for i in range(1, 9):
+    print(' ' * (8 - i) + '*' * (i + (i - 1)))
+
+
+def draw_triangle():
+    m = 15
+    for i in range(1, m + 1, 2):
+        print(' ' * ((m - i) // 2) + '*' * i)
+
+
+User
+avatar
+Sofiko
+Novichenko
+3
+года
+назад
+🤩
+Верное
+решение  # 209502650
+Python
+3
+
+
+
+def solve(a, b, c):
+    d = (b ** 2) - 4 * a * c
+    x1 = ((-1 * b) - d ** 0.5) / (2 * a)
+    x2 = ((-1 * b) + d ** 0.5) / (2 * a)
+
+    return min(x1, x2), max(x1, x2)
+
+a, b, c = int(input()), int(input()), int(input())
+
+x1, x2 = solve(a, b, c)
+print(x1, x2)
+
+
+def solve(a, b, c):
+    D = b * b - 4 * a * c
+    return sorted([(-b - D ** 0.5) / (2 * a), (-b + D ** 0.5) / (2 * a)])
+
+# считываем данные
+a, b, c = int(input()), int(input()), int(input())
+
+# вызываем функцию
+x1, x2 = solve(a, b, c)
+print(x1, x2)

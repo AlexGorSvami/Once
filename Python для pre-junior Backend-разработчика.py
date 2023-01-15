@@ -334,24 +334,25 @@
 #     print(i)
 
 
-command = input().split()
-stek = []
-while command[0] != 'close':
-    if command[0] == 'add':
-        stek.append(command[int(1)])
-    if command[0] == 'pop':
-        print(stek.pop())
-    if command[0] == 'head':
-        print(stek[-1])
-    command = input().split()
+# command = input().split()
+# stek = []
+# while command[0] != 'close':
+#     if command[0] == 'add':
+#         stek.append(command[int(1)])
+#     if command[0] == 'pop':
+#         print(stek.pop())
+#     if command[0] == 'head':
+#         print(stek[-1])
+#     command = input().split()
+#
+#
+#
+# while (command := input()) != "close":
+#     match command.split():
+#         case "add", n:
+#             stack.append(n)
+#         case "pop",:
+#             print(stack.pop())
+#         case "head",:
+#             print(stack[-1])
 
-
-
-while (command := input()) != "close":
-    match command.split():
-        case "add", n:
-            stack.append(n)
-        case "pop",:
-            print(stack.pop())
-        case "head",:
-            print(stack[-1])
