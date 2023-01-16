@@ -635,21 +635,6 @@ def draw_triangle():
         print(' ' * ((m - i) // 2) + '*' * i)
 
 
-User
-avatar
-Sofiko
-Novichenko
-3
-года
-назад
-🤩
-Верное
-решение  # 209502650
-Python
-3
-
-
-
 def solve(a, b, c):
     d = (b ** 2) - 4 * a * c
     x1 = ((-1 * b) - d ** 0.5) / (2 * a)
@@ -667,9 +652,8 @@ def solve(a, b, c):
     D = b * b - 4 * a * c
     return sorted([(-b - D ** 0.5) / (2 * a), (-b + D ** 0.5) / (2 * a)])
 
-# считываем данные
 a, b, c = int(input()), int(input()), int(input())
 
-# вызываем функцию
+
 x1, x2 = solve(a, b, c)
 print(x1, x2)
