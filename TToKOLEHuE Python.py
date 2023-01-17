@@ -624,36 +624,82 @@
 # print(compute_binom(n, k))
 
 
+# for i in range(1, 9):
+#     print(' ' * (8 - i) + '*' * (i + (i - 1)))
+#
+#
+# def draw_triangle():
+#     m = 15
+#     for i in range(1, m + 1, 2):
+#         print(' ' * ((m - i) // 2) + '*' * i)
+#
+#
+# def solve(a, b, c):
+#     d = (b ** 2) - 4 * a * c
+#     x1 = ((-1 * b) - d ** 0.5) / (2 * a)
+#     x2 = ((-1 * b) + d ** 0.5) / (2 * a)
+#
+#     return min(x1, x2), max(x1, x2)
+#
+# a, b, c = int(input()), int(input()), int(input())
+#
+# x1, x2 = solve(a, b, c)
+# print(x1, x2)
+#
+#
+# def solve(a, b, c):
+#     D = b * b - 4 * a * c
+#     return sorted([(-b - D ** 0.5) / (2 * a), (-b + D ** 0.5) / (2 * a)])
+#
+# a, b, c = int(input()), int(input()), int(input())
+#
+#
+# x1, x2 = solve(a, b, c)
+# print(x1, x2)
 
-for i in range(1, 9):
-    print(' ' * (8 - i) + '*' * (i + (i - 1)))
+# ------------------------------------RANDOM---------------------------------------
+
+# import random
+#
+# numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+# random.shuffle(numbers)
+# print(numbers)
+#
+#
+#
+# print(random.choice('BEEGEEK'))
+# print(random.choice([1, 2, 3, 4]))
+# print(random.choice(['a', 'b', 'c', 'd']))
+#
+# print(random.sample(numbers, 1))
+# print(random.sample(numbers, 2))
+# print(random.sample(numbers, 3))
+# print(random.sample(numbers, 5))
 
 
-def draw_triangle():
-    m = 15
-    for i in range(1, m + 1, 2):
-        print(' ' * ((m - i) // 2) + '*' * i)
+# right = int(input())
+# left = 1
+# middle = (left + right) // 2
+# count = 1
+# while middle != left:
+#     if middle % 2 == 0:
+#         middle //= 2
+#     else:
+#         middle = (middle+1)//2
+#     count += 1
+#
+# print(count)
+#
+#
+# n = int(input())
+# for i in range(n):
+#     if 2**i >= n:
+#         print(i)
+#         break
+#
+#
+# from math import *
+# print(ceil(log2(int(input()))))
 
 
-def solve(a, b, c):
-    d = (b ** 2) - 4 * a * c
-    x1 = ((-1 * b) - d ** 0.5) / (2 * a)
-    x2 = ((-1 * b) + d ** 0.5) / (2 * a)
-
-    return min(x1, x2), max(x1, x2)
-
-a, b, c = int(input()), int(input()), int(input())
-
-x1, x2 = solve(a, b, c)
-print(x1, x2)
-
-
-def solve(a, b, c):
-    D = b * b - 4 * a * c
-    return sorted([(-b - D ** 0.5) / (2 * a), (-b + D ** 0.5) / (2 * a)])
-
-a, b, c = int(input()), int(input()), int(input())
-
-
-x1, x2 = solve(a, b, c)
-print(x1, x2)
+# -------------------------Числовая угадайка -------------------------------------------
