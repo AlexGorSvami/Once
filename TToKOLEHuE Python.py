@@ -703,3 +703,94 @@
 
 
 # -------------------------Числовая угадайка -------------------------------------------
+# print('Welcome to my special game')
+# print('Max tries = 3')
+# from random import randint
+#
+# integer = randint(1, 101)
+# num = 1
+# tries = 0
+# max_tries = 3
+# def is_valid(num):
+#     if 1 <= num <= 100:
+#         return True
+#     else:
+#         return False
+#
+#
+# while tries != max_tries:
+#     num = int(input('Enter your number '))
+#     if not is_valid(num):
+#         print('Введите число от 1 до 100 включительно')
+#         continue
+#     if num > integer:
+#         print(f'Number is less {2 - tries } attempts left')
+#     elif num < integer:
+#         print(f'Number is more {2 - tries } attempts left')
+#     else:
+#         print('You Winner')
+#     tries += 1
+# print(f' You louse!!! It was a mystery {integer}')
+
+
+# ------------Magic  Ball   -------------------------------------------
+
+#
+# answers = ['Бесспорно', 'Мне кажется- да', 'Пока неясно, попробуй снова', 'Даже не думай',
+#            'Предрешено', 'Вероятнее всего', 'Спроси позже', 'Мой ответ - нет',
+#            'Никаких сомнений', 'Хорошие перспективы', 'Лучше не рассказывать', 'По моим данным - нет',
+#            'Определённо да', 'Знаки говорят - да', 'Сейчас нельзя предсказать', 'Перспективы не очень хорошие',
+#            'Можешь быть уверен в этом', 'Да', 'Сконцентрируйся и спроси опять', 'Весьма сомнительно']
+#
+# print('Привет Мир, я магический шар, и я знаю ответ на любой твой вопрос.')
+# name = input('Как тебя зовут? ')
+# print(f'Hi {name}')
+#
+# while  True:
+#     from random import choice
+#     print(input('Какой вопрос ты хотел бы задать? '))
+#     print(choice(answers))
+#     more = input('Хочешь задать ещё один вопрос?')
+#     if more.lower()  ==  'да':
+#         continue
+#     else:
+#         print('Возвращайся если возникнут вопросы!')
+#         break
+
+
+# -------------------Генератор безопасных паролей------------------------------------------------
+import random
+
+digits = '0123456789'
+lowercase_letters = 'abcdefghijklmnopqrstuvwxyz'
+uppercase_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+punctuation = '!# $%&*+-=?@^_.'
+chars = ''
+
+count = int(input('Количество паролей для генерации: '))
+length = int(input('Длина одного пароля: '))
+dig = input('Включать ли цифры 0123456789?  (y/n)').lower()
+upper = input('Включать ли прописные буквы ABCDEFGHIJKLMNOPQRSTUVWXYZ?   (y/n)').lower()
+lower = input('Включать ли строчные буквы abcdefghijklmnopqrstuvwxyz?  (y/n)').lower()
+symbol = input('Включать ли символы  !#$%&*+-=?@^_? (y/n)').lower()
+not_symbol = input('Исключать ли неоднозначные символы il1Lo0O? (y/n)').lower()
+if dig == 'y':
+    chars += digits
+if upper == 'y':
+    chars += uppercase_letters
+if lower == 'y':
+    chars += lowercase_letters
+if symbol == 'y':
+    chars += punctuation
+if not_symbol == 'y':
+    chars.replace('il1Lo0O ', '')
+
+
+def generate_password(length, chars):
+    password = ''
+    for i in range(length):
+        password += random.choice(chars)
+    return password
+
+for i in range(count):
+    print(generate_password(length,chars))
