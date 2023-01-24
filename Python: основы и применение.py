@@ -15,6 +15,7 @@
 # print(s(21))
 # print(s())
 
-mas = [int(i) for i in input().split()]
-mas.sort()
-print(*mas[:3])
+# mas = [int(i) for i in input().split()]
+# mas.sort()
+# print(*mas[:3])
+

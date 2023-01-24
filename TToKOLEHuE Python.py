@@ -790,91 +790,319 @@
 # Задаем четыре вопроса пользователю: шифр-дешифр, язык, шаг, текст.
 # За каждым вопросом стоит while-проверка, что введенный ответ является корректным значением.
 
-whats_direction = input('Что мы должны сделать: шифровать или дешифровать? \n').lower()
-while whats_direction != 'шифровать' and whats_direction != 'дешифровать':
-    whats_direction = input('Что-то не то ты ввёл. Напиши "шифровать" либо "дешифровать". \n').lower()
-
-whats_language = input('Какой нужен язык: русский или английский? \n').lower()
-while whats_language != 'русский' and whats_language != 'английский':
-    whats_language = input('Что-то не то ты ввёл. Напиши "русский" либо "английский". \n').lower()
-
-whats_step = input('На сколько символовов мы сдвигаем буквы по алфавиту? Ответ напиши числом. \n')
-while whats_step.isdigit() != True:
-    whats_step = input('Что-то не то ты ввёл. Напиши число. \n')
-
-whats_text = input('Какой текст нужно использовать сейчас? \n')
-while whats_text.isspace() == True:
-    whats_text = input('Что-то не то ты ввёл. Введи текст. \n')
-
-
-# Объявляем функцию с четырьмя аргументами – соответственно четырем вопросам.
-def caesar(direction, language, step, text):
-    """
-
-    Args:
-        direction:
-        language:
-        step:
-        text:
-
-    Returns:
-
-    """
-    # Четыре словаря под русские и английские символы, большие и маленькие.
-    # В теории можно обойтись без них и обращаться к таблице Unicode.
-    # Но мне было удобнее создать свои словари.
-
-    upper_eng_alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    lower_eng_alphabet = 'abcdefghijklmnopqrstuvwxyz'
-    upper_rus_alphabet = 'АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
-    lower_rus_alphabet = 'абвгдежзийклмнопрстуфхцчшщъыьэюя'
-
-    # Объявляем цикл for. Количество итераций равно длине строки text.
-    for i in range(len(text)):
-
-        # Задаем локальные переменные: длину алфавита и значения словарей.
-        if language == 'русский':
-            alphas = 32
-            low_alphabet = lower_rus_alphabet
-            upp_alphabet = upper_rus_alphabet
-        if language == 'английский':
-            alphas = 26
-            low_alphabet = lower_eng_alphabet
-            upp_alphabet = upper_eng_alphabet
-
-        # Если text[i] является буквой:
-        if text[i].isalpha():
-
-            # Находим место символа text[i] в словаре upp_alphabet либо low_alphabet.
-            if text[i] == text[i].lower():
-                place = low_alphabet.index(text[i])
-            if text[i] == text[i].upper():
-                place = upp_alphabet.index(text[i])
-
-            # Если нужно дешифровать, то:
-            if direction == 'дешифровать':
-                # Находим индекс для измененного символа.
-                # Новый ндекс = Старый индекс - Шаг % Длина алфавита
-                index = (place - int(step)) % alphas
-
-
-            # Если нужно зашифровать, то:
-            elif direction == 'шифровать':
-                # Находим индекс для измененного символа.
-                # Новый ндекс = Старый индекс + Шаг % Длина алфавита
-                index = (place + int(step)) % alphas
-
-            # Выводим измененный символ.
-            if text[i] == text[i].lower():
-                print(low_alphabet[index], end='')
-            if text[i] == text[i].upper():
-                print(upp_alphabet[index], end='')
-
-                # Если text[i] не является буквой:
-        else:
-            # Делаем print этого символа без изменений.
-            print(text[i], end='')
+# whats_direction = input('Что мы должны сделать: шифровать или дешифровать? \n').lower()
+# while whats_direction != 'шифровать' and whats_direction != 'дешифровать':
+#     whats_direction = input('Что-то не то ты ввёл. Напиши "шифровать" либо "дешифровать". \n').lower()
+#
+# whats_language = input('Какой нужен язык: русский или английский? \n').lower()
+# while whats_language != 'русский' and whats_language != 'английский':
+#     whats_language = input('Что-то не то ты ввёл. Напиши "русский" либо "английский". \n').lower()
+#
+# whats_step = input('На сколько символовов мы сдвигаем буквы по алфавиту? Ответ напиши числом. \n')
+# while whats_step.isdigit() != True:
+#     whats_step = input('Что-то не то ты ввёл. Напиши число. \n')
+#
+# whats_text = input('Какой текст нужно использовать сейчас? \n')
+# while whats_text.isspace() == True:
+#     whats_text = input('Что-то не то ты ввёл. Введи текст. \n')
+#
+#
+# # Объявляем функцию с четырьмя аргументами – соответственно четырем вопросам.
+# def caesar(direction, language, step, text):
+#     # Четыре словаря под русские и английские символы, большие и маленькие.
+#     # В теории можно обойтись без них и обращаться к таблице Unicode.
+#     # Но мне было удобнее создать свои словари.
+#
+#     upper_eng_alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+#     lower_eng_alphabet = 'abcdefghijklmnopqrstuvwxyz'
+#     upper_rus_alphabet = 'АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
+#     lower_rus_alphabet = 'абвгдежзийклмнопрстуфхцчшщъыьэюя'
+#
+#     # Объявляем цикл for. Количество итераций равно длине строки text.
+#     for i in range(len(text)):
+#
+#         # Задаем локальные переменные: длину алфавита и значения словарей.
+#         if language == 'русский':
+#             alphas = 32
+#             low_alphabet = lower_rus_alphabet
+#             upp_alphabet = upper_rus_alphabet
+#         if language == 'английский':
+#             alphas = 26
+#             low_alphabet = lower_eng_alphabet
+#             upp_alphabet = upper_eng_alphabet
+#
+#         # Если text[i] является буквой:
+#         if text[i].isalpha():
+#
+#             # Находим место символа text[i] в словаре upp_alphabet либо low_alphabet.
+#             if text[i] == text[i].lower():
+#                 place = low_alphabet.index(text[i])
+#             if text[i] == text[i].upper():
+#                 place = upp_alphabet.index(text[i])
+#
+#             # Если нужно дешифровать, то:
+#             if direction == 'дешифровать':
+#                 # Находим индекс для измененного символа.
+#                 # Новый ндекс = Старый индекс - Шаг % Длина алфавита
+#                 index = (place - int(step)) % alphas
+#
+#
+#             # Если нужно зашифровать, то:
+#             elif direction == 'шифровать':
+#                 # Находим индекс для измененного символа.
+#                 # Новый ндекс = Старый индекс + Шаг % Длина алфавита
+#                 index = (place + int(step)) % alphas
+#
+#             # Выводим измененный символ.
+#             if text[i] == text[i].lower():
+#                 print(low_alphabet[index], end='')
+#             if text[i] == text[i].upper():
+#                 print(upp_alphabet[index], end='')
+#
+#                 # Если text[i] не является буквой:
+#         else:
+#             # Делаем print этого символа без изменений.
+#             print(text[i], end='')
+#
+#
+# # Вызываем функцию, передавая в аргументы четыре input`а из начала кода.
+# caesar(whats_direction, whats_language, whats_step, whats_text)
 
 
-# Вызываем функцию, передавая в аргументы четыре input`а из начала кода.
-caesar(whats_direction, whats_language, whats_step, whats_text)
+
+# -----------------------Угадайка слов  ------------------------------------------
+import random
+
+word_list = [
+    'тоник',
+    'прогул',
+    'жених',
+    'тишина',
+    'переход',
+    'иск',
+    'королева',
+    'обряд',
+    'мина',
+    'выборы',
+    'середина',
+    'бульдог',
+    'курятина',
+    'шланг',
+    'сознание',
+    'бяка',
+    'повод',
+    'гнездо',
+    'сторона',
+    'рукоделие',
+    'защитник',
+    'степь',
+    'ресторан',
+    'сено',
+    'консультация',
+    'пчела',
+    'тёща',
+    'премьера',
+    'сажа',
+    'верность',
+    'дровник',
+    'гамма',
+    'запрос',
+    'трамвай',
+    'хребет',
+    'шток',
+    'кустарник',
+    'ядро',
+    'рождение',
+    'бедуин',
+    'индекс',
+    'закон',
+    'хохот',
+    'выходной',
+    'яхтсменка',
+    'прятки',
+    'скафандр',
+    'минус',
+    'демон',
+    'юбилей',
+    'маникюр',
+    'дракон',
+    'йога',
+    'гуманитарий',
+    'сотрудник',
+    'верёвка',
+    'блюдце',
+    'строительство',
+    'ванна',
+    'манекен',
+    'готика',
+    'желчь',
+    'сантехника',
+    'журнал',
+    'пьяница',
+    'циркуль',
+    'листоед',
+    'плинтус',
+    'фаланга',
+    'ремонт',
+    'рубашка',
+    'арфа',
+    'вывеска',
+    'столовая',
+    'подарок',
+    'верблюд',
+    'константа',
+    'ветеринар',
+    'зенит',
+    'шпагат',
+    'сани',
+    'добро',
+    'собачник',
+    'пикачу',
+    'улей',
+    'мусульманка',
+    'молоток',
+    'свидание',
+    'звезда',
+    'переезд',
+    'хакер',
+    'хруст',
+    'шпаргалка',
+    'шампанское',
+    'грач',
+    'редакция',
+    'уха',
+    'бабушка',
+    'ухо',
+    'шитьё',
+    'компот',
+    'зайчатина',
+    'пень',
+    'кран',
+    'брюнет',
+    'перила',
+    'выигрыш',
+    'обещание',
+    'еврей',
+    'скат',
+    'свидетельство',
+    'мусор',
+    'курага',
+    'осмотр',
+    'профессия',
+    'кура',
+    'жалость',
+    'слониха',
+    'залив',
+    'капитан'
+]
+
+
+def get_word():
+    return word_list[random.randint(0, 121)].upper()
+
+
+def display_hangman(tries):
+    stages = [  # финальное состояние: голова, торс, обе руки, обе ноги
+        '''
+           --------
+           |      |
+           |      O
+           |     \\|/
+           |      |
+           |     / \\
+           -
+        ''',
+        # голова, торс, обе руки, одна нога
+        '''
+           --------
+           |      |
+           |      O
+           |     \\|/
+           |      |
+           |     / 
+           -
+        ''',
+        # голова, торс, обе руки
+        '''
+           --------
+           |      |
+           |      O
+           |     \\|/
+           |      |
+           |      
+           -
+        ''',
+        # голова, торс и одна рука
+        '''
+           --------
+           |      |
+           |      O
+           |     \\|
+           |      |
+           |     
+           -
+        ''',
+        # голова и торс
+        '''
+           --------
+           |      |
+           |      O
+           |      |
+           |      |
+           |     
+           -
+        ''',
+        # голова
+        '''
+           --------
+           |      |
+           |      O
+           |    
+           |      
+           |     
+           -
+        ''',
+        # начальное состояние
+        '''
+           --------
+           |      |
+           |      
+           |    
+           |      
+           |     
+           -
+        '''
+    ]
+    return stages[tries]
+
+
+def play(word):
+    word_completion = '_' * len(word)
+    guessed = False
+    guessed_letters = []
+    guessed_words = []
+    tries = 6
+    print('Давайте зарубимся  в  угадайку')
+    print(display_hangman(tries=6))
+    print(word_completion)
+    while True:
+        word_input = input('Введи букву или слово%:').upper()
+        if not word_input.isalpha():
+            print('Вы ошиблись, попробуйте ещё')
+            continue
+        if word_input in guessed_words or word_input in guessed_letters:
+            print('Уже было')
+            continue
+        if len(word_input) > 1:
+            if word_input == word:
+                print('Поздравляю! Ты красавчик!!!')
+                break
+            else:
+                guessed_words.append(word_input)
+                tries -= 1
+                print(f'Косяк   осталось {tries}  попыток')
+                print(display_hangman(tries))
+                print(word, guessed_letters)
+            if tries == 0:
+                print(f'Эх ты!!! было зшаданно {word}')
+                break
