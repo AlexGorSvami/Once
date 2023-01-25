@@ -19,3 +19,6 @@
 # mas.sort()
 # print(*mas[:3])
 
+mas = [[int(j) for j in input().split()] for i in range(3)]
+for i in mas:
+    print(i[3],end=' ')
