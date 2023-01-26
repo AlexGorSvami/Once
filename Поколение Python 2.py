@@ -97,17 +97,39 @@
 # print(*digits)
 
 # ----------------------------------------------------------------------------------------------------
-n = int(input())
-flag = 'НЕТ'
-mas = [int(i) for i in input().split()]
-for k in mas:
-    big = k
-    for i in range(n+1):
-        for j in range(n+1):
-            if big == mas[i] * mas[j]:
-                flag = 'ДА'
-                break
+# n = int(input())
+# flag = 'НЕТ'
+# mas = [int(i) for i in input().split()]
+# for k in mas:
+#     big = k
+#     for i in range(n + 1):
+#         for j in range(n + 1):
+#             if big == mas[i] * mas[j]:
+#                 flag = 'ДА'
+#                 break
+#
+# print(flag)
 
-print(flag)
+# --------------------------------------------------------------
+#                     Камень, ножницы, бумага
 
+# x, y = input(), input()
+# var = ['камень', 'ножницы', 'бумага']
+# ans = ['ничья', 'Руслан', 'Тимур']
+# print(ans[var.index(x) - var.index(y)])
+#
+# print(['ничья', 'Тимур', 'Руслан'][input().count('а') - input().count('а')])
+
+
+
+
+
+# s = input().split('О')
+# print(len(max(s)))
+
+# n = int(input())
+# mas  = [[j for j in input()] for i in range(n)]
+# for i in range(len(mas)):
+#     if 'a' in mas[i] and mas[i].count('n') >= 2 and 't' in mas[i] and 'o' in mas[i] :
+#         print(i+1, end=' ')
 
