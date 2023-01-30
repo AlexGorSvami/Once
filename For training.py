@@ -85,8 +85,24 @@
 #          print(j,end = "")
 #      print()
 
-n = int(input())
-count = 0
-for i in range(1,n):
-    count += int(input())
-print(count())
+# n = int(input())
+# count = 0
+# for i in range(1,n):
+#     count += int(input())
+# print(count())
+
+# n = int(input())
+# print(n< 100 and range(15,n,15) or ['слишком большое значение n'])
+
+
+import sys
+
+lst_in = list(map(str.strip, sys.stdin.readlines()))
+print(lst_in)
+i = 0
+while i < len(lst_in):
+    if ' ' in lst_in[i]:
+        lst_in.remove(lst_in[i])
+    i += 1
+
+print(*lst_in)
