@@ -133,12 +133,18 @@
 # c = int(input())
 # print(max((a+b+c), (a*b*c), (a*(b+c)), ((a+b)*c), (a*b + c), (a + b * c)))
 
-def nearest_value(values: set, one: int) -> int:
-    if one in values:
-        return one
-    else:
+# def nearest_value(values: set, one: int) -> int:
+#     if one in values:
+#         return one
+#     else:
+
+# assert nearest_value({4, 7, 10, 11, 12, 17}, 9)
 
 
+mas = [float(i) for i in input().split()]
+for i, el in enumerate(mas):
+    if  el < 0:
+        mas[i] = -1.0
 
-assert nearest_value({4, 7, 10, 11, 12, 17}, 9)
+print(mas)
 

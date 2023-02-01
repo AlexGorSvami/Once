@@ -108,9 +108,9 @@
 # print(*lst_in)
 
 
-# mas = [i.lower().rstrip('ьъы') for i in input().split()]
-# for i in range(len(mas) - 1):
-#     if mas[i + 1][0] == mas[i][-1]:
+# mas = [i.lower().rstrip('ьыъ') for i in input().split()]
+# for i in range(len(mas)-1):
+#     if mas[i][-1] == mas[i+1][0]:
 #         flag = 'ДА'
 #     else:
 #         flag = 'НЕТ'
@@ -118,8 +118,14 @@
 # print(flag)
 
 
-p = [0] * 10
-while sum(p) < 5:
-    n = int(input())
-    if p[n] == 0:
-        p[n] = 1
+s = input()
+mas = []
+for i in range(len(s)-1):
+    if s[i] == 'р' and s[i+1] == 'а':
+        mas.append(i)
+print(*[-1] if len(mas) == 0 else mas)
+
+
+
+
+

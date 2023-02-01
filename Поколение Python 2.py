@@ -133,3 +133,21 @@
 #     if 'a' in mas[i] and mas[i].count('n') >= 2 and 't' in mas[i] and 'o' in mas[i] :
 #         print(i+1, end=' ')
 
+
+# mas = [float(i) for i in input().split()]
+# for i, el in enumerate(mas):
+#     if  el < 0:
+#         mas[i] = -1.0
+#
+# print(mas)
+
+mas = [int(input()) for i in range(int(input()))]
+num = int(input())
+flag = 'НЕТ'
+for i in range(len(mas) ):
+    for j in range(len(mas) ):
+        if i != j:
+            if mas[j] * mas[i] == num:
+                flag = 'ДА'
+
+print(flag)
