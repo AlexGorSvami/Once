@@ -121,9 +121,6 @@
 # print(['ничья', 'Тимур', 'Руслан'][input().count('а') - input().count('а')])
 
 
-
-
-
 # s = input().split('О')
 # print(len(max(s)))
 
@@ -141,13 +138,49 @@
 #
 # print(mas)
 
-mas = [int(input()) for i in range(int(input()))]
-num = int(input())
-flag = 'НЕТ'
-for i in range(len(mas) ):
-    for j in range(len(mas) ):
-        if i != j:
-            if mas[j] * mas[i] == num:
-                flag = 'ДА'
+# mas = [int(input()) for i in range(int(input()))]
+# num = int(input())
+# flag = 'НЕТ'
+# for i in range(len(mas) ):
+#     for j in range(len(mas) ):
+#         if i != j:
+#             if mas[j] * mas[i] == num:
+#                 flag = 'ДА'
+#
+# print(flag)
 
-print(flag)
+# list1 = [10, 20, [300, 400, [5000, 6000], 500], 30, 40]
+# list1[2][2].append(7000)
+#
+# print(list1)
+
+# list1 = ['a', 'b', ['c', ['d', 'e', ['f', 'g'], 'k'], 'l'], 'm', 'n']
+# sub_list = ['h', 'i', 'j']
+#
+# list1[2][1][2].extend(sub_list)
+# print(list1)
+
+
+# list1 = [[1, 7, 8], [9, 7, 102], [6, 106, 105], [100, 99, 98, 103], [1, 2, 3]]
+# maximum = -1
+# for i in range(len(list1)):
+#     if max(list1[i]) > maximum:
+#         maximum = max(list1[i])
+# print(maximum)
+
+# list1 = [[1, 7, 8], [9, 7, 102], [102, 106, 105], [100, 99, 98, 103], [1, 2, 3]]
+# for i in range(len(list1)):
+#     list1[i] = list1[i][::-1]
+#
+# print(list1)
+
+list1 = [[1, 7, 8], [9, 7, 102], [102, 106, 105], [100, 99, 98, 103], [1, 2, 3]]
+total = 0
+counter = 0
+
+for i in list1:
+    for j in i:
+        total += j
+        counter += 1
+
+print(total / counter)
