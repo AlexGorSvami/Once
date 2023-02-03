@@ -141,10 +141,40 @@
 # assert nearest_value({4, 7, 10, 11, 12, 17}, 9)
 
 
-mas = [float(i) for i in input().split()]
-for i, el in enumerate(mas):
-    if  el < 0:
-        mas[i] = -1.0
+# mas = [float(i) for i in input().split()]
+# for i, el in enumerate(mas):
+#     if  el < 0:
+#         mas[i] = -1.0
+#
+# print(mas)
 
-print(mas)
+# list1 = [[1] * 3] * 3
+# print(list1)
+# list1[0][1] = 5
+# print(list1)
 
+
+# class SoccerPlayer:
+#     def __init__(self, name, surname, goals=0, assists=0) -> None:
+#         self.name = name
+#         self.surname = surname
+#         self.goals = goals
+#         self.assists = assists
+#
+#     def score(self, goals=1):
+#         self.goals += goals
+#
+#     def make_assist(self, assists=1):
+#         self.assists += assists
+#
+#     def statistics(self):
+#         print(f'{self.surname}{self.name}-голы {self.goals}, передачи: {self.assists}')
+#
+#
+# leo = SoccerPlayer('Leo', 'Messi')
+# leo.score(700)
+# leo.make_assist(500)
+# leo.statistics() # выводит "Messi Leo - голы: 700, передачи: 500"
+# kokorin = SoccerPlayer('Alex', 'Kokorin')
+# kokorin.score()
+# kokorin.statistics() # выводит "Kokorin Alex - голы: 1, передачи: 0"

@@ -174,13 +174,39 @@
 #
 # print(list1)
 
-list1 = [[1, 7, 8], [9, 7, 102], [102, 106, 105], [100, 99, 98, 103], [1, 2, 3]]
-total = 0
-counter = 0
+# list1 = [[1, 7, 8], [9, 7, 102], [102, 106, 105], [100, 99, 98, 103], [1, 2, 3]]
+# total = 0
+# counter = 0
+#
+# for i in list1:
+#     for j in i:
+#         total += j
+#         counter += 1
+#
+# print(total / counter)
 
-for i in list1:
-    for j in i:
-        total += j
-        counter += 1
 
-print(total / counter)
+# n = int(input())
+# mas = [[int(i) for i in range(1,n+1)] for i in range(n)]
+# print(*mas,sep='\n')
+#
+#
+# n  = int(input())
+# print(*[list(range(1,i+1)) for i in range(1,n+1)],sep='\n')
+
+
+# mas = []
+# ras = []
+# for m in input().split():
+#     if len(ras) == 0:
+#         ras.append(m)
+#     else:
+#         if ras[-1] ==  m:
+#             ras.extend(m)
+#         else:
+#             mas.append(ras)
+#             ras = []
+#             ras.append(m)
+# if ras:
+#     mas.append(ras)
+# print(mas)
