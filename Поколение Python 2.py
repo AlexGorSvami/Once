@@ -210,3 +210,39 @@
 # if ras:
 #     mas.append(ras)
 # print(mas)
+
+
+# from math  import factorial
+#
+# n = int(input())
+# mas = []
+# for i in range(n+1):
+#     mas.append(int(factorial(n) /( factorial(i) * factorial(n  - i) )))
+#
+# print(mas)
+
+
+
+# def pascal_treangle(n):
+#     p = []
+#     for i in range(n):
+#         row = [1] * (i + 1)
+#         for j in range( i + 1):
+#             if j != 0 and j != i:
+#                 row[j] =  p[i-1][j-1] + p[i-1][j]
+#         p.append(row)
+#
+#     for i  in p:
+#         print(*i)
+#
+# pascal_treangle(5)
+
+
+from math import factorial
+def pascal(n):
+    mas = []
+    for i in range(n+1):
+        mas.append(int(factorial(n)/ (factorial(i) * factorial(n-i))))
+    return(mas)
+
+print(pascal(int(input())))

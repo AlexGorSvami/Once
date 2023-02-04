@@ -178,3 +178,7 @@
 # kokorin = SoccerPlayer('Alex', 'Kokorin')
 # kokorin.score()
 # kokorin.statistics() # выводит "Kokorin Alex - голы: 1, передачи: 0"
+
+
+# n = int(input())
+# print(*[list(range(1,n+1)) for i in range(n)],sep='\n')
