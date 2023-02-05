@@ -182,3 +182,16 @@
 
 # n = int(input())
 # print(*[list(range(1,n+1)) for i in range(n)],sep='\n')
+
+n = 4
+mas = []
+for i in range(n):
+    mas.append([1] * n)
+
+for i in range(n):
+    for j in range(n):
+        if j == n-1:
+            mas[i][j] = 5
+
+for i in mas:
+    print(*i)

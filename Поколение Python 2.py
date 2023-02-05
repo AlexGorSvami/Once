@@ -222,7 +222,6 @@
 # print(mas)
 
 
-
 # def pascal_treangle(n):
 #     p = []
 #     for i in range(n):
@@ -238,11 +237,25 @@
 # pascal_treangle(5)
 
 
-from math import factorial
-def pascal(n):
-    mas = []
-    for i in range(n+1):
-        mas.append(int(factorial(n)/ (factorial(i) * factorial(n-i))))
-    return(mas)
+# from math import factorial
+# def pascal(n):
+#     mas = []
+#     for i in range(n+1):
+#         mas.append(int(factorial(n)/ (factorial(i) * factorial(n-i))))
+#     return(mas)
+#
+# print(pascal(int(input())))
 
-print(pascal(int(input())))
+
+# for i in range(int(input())):
+#     s, virus, x = input(), 'anton', 0
+#     for j in s:
+#         if j == virus[x]:
+#             x += 1
+#         if x == 5:
+#             print(i+1, end= ' ')
+#             break
+
+
+
+
