@@ -197,13 +197,129 @@
 #     print(*i)
 
 
-glas = 'йуеыэаояию'
-a = input()
-g = 0
-s = 0
-for i in a:
-    if i in glas:
-        g += 1
-    elif i.isalpha():
-        s += 1
-print(g, s, sep='\n')
+# glas = 'йуеыэаояию'
+# a = input()
+# g = 0
+# s = 0
+# for i in a:
+#     if i in glas:
+#         g += 1
+#     elif i.isalpha():
+#         s += 1
+# print(g, s, sep='\n')
+
+
+# s = input()
+# ords = 0
+# for i in range(len(s)):
+#     ords += ord(s[i])
+# mas = []
+# if len(s) == 8:
+#     for i in s:
+#         for j in s:
+#             for k in s:
+#                 for l in s:
+#                     for m in s:
+#                         for n in s:
+#                             for o in s:
+#                                 for r in s:
+#                                     res = i + j + k + l + m + n + o + r
+#                                     if res not in mas:
+#                                         if ord(i) + ord(j) + ord(k) + ord(l) + ord(m) + ord(n) + ord(o) + ord(
+#                                                 r) == ords:
+#                                             mas.append(res)
+# if len(s) == 7:
+#     for i in s:
+#         for j in s:
+#             for k in s:
+#                 for l in s:
+#                     for m in s:
+#                         for n in s:
+#                             for o in s:
+#                                 res = i + j + k + l + m + n + o
+#                                 if res not in mas:
+#                                     if ord(i) + ord(j) + ord(k) + ord(l) + ord(m) + ord(n) + ord(o) == ords:
+#                                         mas.append(res)
+# if len(s) == 6:
+#     for i in s:
+#         for j in s:
+#             for k in s:
+#                 for l in s:
+#                     for m in s:
+#                         for n in s:
+#                             res = i + j + k + l + m
+#                             if res not in mas:
+#                                 if ord(i) + ord(j) + ord(k) + ord(l) + ord(m) + ord(n) == ords:
+#                                     mas.append(res)
+#
+# if len(s) == 5:
+#     for i in s:
+#         for j in s:
+#             for k in s:
+#                 for l in s:
+#                     for m in s:
+#                         res = i + j + k + l + m
+#                         if res not in mas:
+#                             if ord(i) + ord(j) + ord(k) + ord(l) + ord(m) == ords:
+#                                 mas.append(res)
+#
+# if len(s) == 4:
+#     for i in s:
+#         for j in s:
+#             for k in s:
+#                 for l in s:
+#                     res = i + j + k + l
+#                     if res not in mas:
+#                         if ord(i) + ord(j) + ord(k) + ord(l) == ords:
+#                             mas.append(res)
+#
+# if len(s) == 3:
+#     for i in s:
+#         for j in s:
+#             for k in s:
+#                 res = i + j + k
+#                 if res not in mas:
+#                     if ord(i) + ord(j) + ord(k) == ords:
+#                         mas.append(res)
+#
+# if len(s) == 2:
+#     for i in s:
+#         for j in s:
+#             res = i + j
+#             if res not in mas:
+#                 if ord(i) + ord(j) == ords:
+#                     mas.append(res)
+#
+# if len(s) == 1:
+#     mas.append(s)
+#
+# print(*sorted(mas), sep='\n')
+
+
+# n = int(input())
+# mas = [[1]*n]*n
+# for i in range(n):
+#     mas[i][-1] = 5
+#
+# for i in mas:
+#     print(*i)
+
+
+# lst_in = ['django chto  eto takoe    poryadok ustanovki','model mtv   marshrutizaciya funkcii  predstavleniya marshrutizaciya  obrabotka isklyucheniy', 'zaprosov perenapravleniya']
+#
+# for i,v in  enumerate(lst_in) :
+#     while ' ' in v:
+#         v = v.replace(' ','-')
+#         while '--' in v:
+#            v=v.replace('--','-')
+#     lst_in[i] = v
+#     print(lst_in[i], end='\n')
+
+
+n = int(input())
+print(2,end=' ')
+for i in range(3,n+1):
+    if i % 2 != 0:
+        print(i,end=' ')
+
+
