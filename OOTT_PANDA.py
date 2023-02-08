@@ -295,30 +295,54 @@ lst_in = ['1 Сергей 35 120000', '2 Федор 23 12000', '3 Иван 13 12
 # db.insert(lst_in)
 # print(db.select(0,1))
 
-class Translator:
-    def add(self, eng, rus):
-        if 'tr' not in self.__dict__:
-            self.tr = {}
-        self.tr.setdefault(eng, [])
-        if rus not in self.tr[eng]:
-            self.tr[eng].append(rus)
+# class Translator:
+#     def add(self, eng, rus):
+#         if 'tr' not in self.__dict__:
+#             self.tr = {}
+#         self.tr.setdefault(eng, [])
+#         if rus not in self.tr[eng]:
+#             self.tr[eng].append(rus)
+#
+#     def remove(self, eng):
+#         self.tr.pop(eng, False)
+#
+#     def translate(self, eng):
+#         return self.tr[eng]
+#
+# tr = Translator()
+# tr.add("tree", "дерево")
+# tr.add("car", "машина")
+# tr.add("car", "автомобиль")
+# tr.add("leaf", "лист")
+# tr.add("river", "река")
+# tr.add("go", "идти")
+# tr.add("go", "ехать")
+# tr.add("go", "ходить")
+# tr.add("milk", "молоко")
+#
+# tr.remove('car')
+# print(*tr.translate('go'))
 
-    def remove(self, eng):
-        self.tr.pop(eng, False)
 
-    def translate(self, eng):
-        return self.tr[eng]
+# class Money:
+#     def __init__(self, money):
+#         self.money = money
 
-tr = Translator()
-tr.add("tree", "дерево")
-tr.add("car", "машина")
-tr.add("car", "автомобиль")
-tr.add("leaf", "лист")
-tr.add("river", "река")
-tr.add("go", "идти")
-tr.add("go", "ехать")
-tr.add("go", "ходить")
-tr.add("milk", "молоко")
+# class Point:
+#     def __init__(self, x, y, color='black'):
+#         self.x = x
+#         self.y = y
+#         self.color = color
+#
+#
+# points = [Point(i, i, 'yellow') if i == 3 else Point(i, i) for i in range(1, 2000, 2)]
 
-tr.remove('car')
-print(*tr.translate('go'))
+class Line:
+    def __init__(self,a,b,c,d,):
+        self.sp = a,b
+        self.ep = c,d
+class Rect:
+    def __init__(self,a,b,c,d,):
+class Ellipse:
+    def __init__(self,a,b,c,d,):
+
