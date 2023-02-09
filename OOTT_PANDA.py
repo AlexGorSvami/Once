@@ -277,7 +277,8 @@
 
 import sys
 
-lst_in = ['1 Сергей 35 120000', '2 Федор 23 12000', '3 Иван 13 1200']
+
+# lst_in = ['1 Сергей 35 120000', '2 Федор 23 12000', '3 Иван 13 1200']
 
 
 # class DataBase:
@@ -337,12 +338,47 @@ lst_in = ['1 Сергей 35 120000', '2 Федор 23 12000', '3 Иван 13 12
 #
 # points = [Point(i, i, 'yellow') if i == 3 else Point(i, i) for i in range(1, 2000, 2)]
 
-class Line:
-    def __init__(self,a,b,c,d,):
-        self.sp = a,b
-        self.ep = c,d
-class Rect:
-    def __init__(self,a,b,c,d,):
-class Ellipse:
-    def __init__(self,a,b,c,d,):
 
+# from random import randint
+# class Line:
+#     def __init__(self, a, b, c, d, ):
+#         self.sp = (a, b)
+#         self.ep = (c, d)
+#
+#
+# class Rect:
+#     def __init__(self, a, b, c, d, ):
+#         self.sp = (a, b)
+#         self.ep = (c, d)
+#
+#
+# class Ellipse:
+#     def __init__(self, a, b, c, d, ):
+#         self.sp = (a, b)
+#         self.ep = (c, d)
+#
+# elements = [(Line, Rect, Ellipse)[randint(0,2)] (1,2,3,4) for n in range(217)]
+# for obj in elements:
+#     if isinstance(obj, Line):
+#         obj.sp = obj.ep = 0, 0
+
+class TriangleChecker:
+    def __init__(self, a, b, c):
+        self.a = a
+        self.b = b
+        self.c = c
+
+    def is_triangle(self):
+        if not all(map(lambda x: type(x) in (int, float), (self.a, self.b, self.c))):
+            return 1
+        if not all(map(lambda x: x > 0, (self.a, self.b, self.c))):
+            return 1
+        a, b, c = self.a, self.b, self.c
+        if a >= b + c or b >= a + c or c >= a + b:
+            return 2
+        return 3
+
+
+a, b, c = map(int, input().split())
+tr = TriangleChecker(a, b, c)
+print(tr.is_triangle())

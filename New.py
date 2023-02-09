@@ -316,10 +316,57 @@
 #     print(lst_in[i], end='\n')
 
 
-n = int(input())
-print(2,end=' ')
-for i in range(3,n+1):
-    if i % 2 != 0:
-        print(i,end=' ')
+# n = int(input())
+# print(2,end=' ')
+# for i in range(3,n+1):
+#     if i % 2 != 0:
+#         print(i,end=' ')
+#
 
+# def polindrom(s):
+#     if len(s) <= 1:
+#         return True
+#     if s[0] != s[-1]:
+#         return False
+#     return polindrom(s[1:-1])
+#
+#
+# s = input().split()
+# res = []
+# for i in s:
+#     if len(i) > 2 and polindrom(i):
+#         res.append(i)
+#
+# print(*sorted(res))
+
+# n = int(input())
+# mas = [[1]*n]*n
+# mas[0][n-1] = 5
+# for i in mas:
+#     print(*i)
+#
+#
+# import sys
+#
+# # считывание списка из входного потока
+# lst_in = list(map(str.strip, sys.stdin.readlines()))
+#
+# for i in lst_in:
+#     print('-'.join(i.split()))
+
+# import sys
+#
+# lst_in = list(map(str.strip, sys.stdin.readlines()))
+#
+# for line in lst_in:
+#     while '  ' in line:
+#         line = line.replace('  ', ' ')
+#     line = line.replace(' ', '-')
+#     print(line)
+
+n =  221
+
+n = int(input())
+while n != 0:
+    print(n // 64,end='  ')
 
