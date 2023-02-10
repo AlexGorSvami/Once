@@ -364,9 +364,12 @@
 #     line = line.replace(' ', '-')
 #     print(line)
 
-n =  221
+# n =  221
+#
+# n = int(input())
+# while n != 0:
+#     print(n // 64,end='  ')
 
-n = int(input())
-while n != 0:
-    print(n // 64,end='  ')
 
+mas = [int(i) for i in input().split()]
+print(max(mas),min(mas),(mas[len(mas)//2] + mas[(len(mas)-1)//2])/2)
