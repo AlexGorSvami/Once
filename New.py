@@ -408,32 +408,76 @@
 # print(Point.list_points[1].x)
 
 
-class Person:
-    def __init__(self,name,age):
-        self.name= name
-        self.age = age
+# class Person:
+#     def __init__(self,name,age):
+#         self.name= name
+#         self.age = age
+#
+#     def display_person_info(self):
+#         print(f'Person: {self.name}, {self.age}')
+#
+# class Company:
+#     def __init__(self,company_name, location):
+#         self.company_name = company_name
+#         self.location = location
+#
+#     def display_company_info(self):
+#         print(f'Company: {self.company_name}, {self.location}')
+#
+# class  Employee:
+#     def __init__(self,name,  age, company_name, location):
+#         self.personal_data  = Person(name,age)
+#         self.work =  Company(company_name, location)
+#
+#
+# emp = Employee('Jessica', 28, 'Google', 'Atlanta')
+# print(emp.personal_data.name)
+# print(emp.personal_data.age)
+# emp.personal_data.display_person_info()
+# print(emp.work.company_name)
+# print(emp.work.location)
+# emp.work.display_company_info()
 
-    def display_person_info(self):
-        print(f'Person: {self.name}, {self.age}')
+# mas = [64,32,16, 8, 4,2,1]
+# res = []
+# n = 221
+# for i in mas:
+#     while n - i >= 0:
+#         res.append(i)
+#         n -= i
+# print(*res)
 
-class Company:
-    def __init__(self,company_name, location):
-        self.company_name = company_name
-        self.location = location
+# n = 7
+# p = []
+#
+# for i in range(n):
+#     row = [1] * (i + 1)
+#     for j in range(i+1):
+#         if j != 0 and j != i:
+#             row[j] = p[i-1][j-1] + p[i-1][j]
+#     p.append(row)
+#
+# for r in p:
+#     print(*r)
 
-    def display_company_info(self):
-        print(f'Company: {self.company_name}, {self.location}')
 
-class  Employee:
-    def __init__(self,name,  age, company_name, location):
-        self.personal_data  = Person(name,age)
-        self.work =  Company(company_name, location)
+# def PrintPasriangle(rows):
+#     row = [1]
+#     for i in range(rows):
+#         print(row)
+#         row = [sum(x) for x in zip([0] + row, row+[0])]
+#
+# PrintPasriangle(10)
 
 
-emp = Employee('Jessica', 28, 'Google', 'Atlanta')
-print(emp.personal_data.name)
-print(emp.personal_data.age)
-emp.personal_data.display_person_info()
-print(emp.work.company_name)
-print(emp.work.location)
-emp.work.display_company_info()
+b = ['а', 'б', 'в', 'г', 'д', 'е', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц',
+     'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я']
+s = input()
+res = s + ' запретил букву '
+for i in b:
+    while i in res:
+        print(res + i)
+        res = res.replace(i, '')
+        res = res.lstrip()
+        res = res.replace('  ',' ')
+

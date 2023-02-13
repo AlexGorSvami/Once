@@ -257,11 +257,43 @@
 #             break
 
 
-a, b = input(), input()
-mass = ['ножницыбумага', 'ножницыящерица', 'бумагакамень', 'бумагаСпок', 'каменьящерица', 'каменьножницы', 'ящерицаСпок', 'ящерицабумага', 'Спокножницы', 'Споккамень']
-if a == b:
-    print('ничья')
-elif a + b  in mass:
-    print('Тимур')
-else:
-    print('Руслан')
+# a, b = input(), input()
+# mass = ['ножницыбумага', 'ножницыящерица', 'бумагакамень', 'бумагаСпок', 'каменьящерица', 'каменьножницы', 'ящерицаСпок', 'ящерицабумага', 'Спокножницы', 'Споккамень']
+# if a == b:
+#     print('ничья')
+# elif a + b  in mass:
+#     print('Тимур')
+# else:
+#     print('Руслан')
+
+# b = ['а', 'б', 'в', 'г', 'д', 'е', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц',
+#      'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я']
+# s = input()
+# res = s + ' запретил букву '
+# for i in b:
+#     while i in res:
+#         print(res + i)
+#         res = res.replace(i, '')
+#         res = res.lstrip()
+#         res = res.replace('  ',' ')
+
+
+# word = input() + ' запретил букву'
+# alpha = [chr(i) for i in range(1072, 1104)]
+#
+# for letter in alpha:
+#     if letter in word:
+#         print(word, letter)
+#         word = word.replace(letter, '').replace('  ', ' ').strip()
+
+mas = input().split()
+n = int(input())
+def chanked(mas,n):
+    res = []
+    for i in range(len(mas)):
+        if mas[:n]:
+            res.append(mas[:n])
+            del mas[:n]
+    return res
+
+print(chanked(mas,n))

@@ -362,23 +362,140 @@ import sys
 #     if isinstance(obj, Line):
 #         obj.sp = obj.ep = 0, 0
 
-class TriangleChecker:
-    def __init__(self, a, b, c):
-        self.a = a
-        self.b = b
-        self.c = c
+# class TriangleChecker:
+#     def __init__(self, a, b, c):
+#         self.a = a
+#         self.b = b
+#         self.c = c
+#
+#     def is_triangle(self):
+#         if not all(map(lambda x: type(x) in (int, float), (self.a, self.b, self.c))):
+#             return 1
+#         if not all(map(lambda x: x > 0, (self.a, self.b, self.c))):
+#             return 1
+#         a, b, c = self.a, self.b, self.c
+#         if a >= b + c or b >= a + c or c >= a + b:
+#             return 2
+#         return 3
 
-    def is_triangle(self):
-        if not all(map(lambda x: type(x) in (int, float), (self.a, self.b, self.c))):
-            return 1
-        if not all(map(lambda x: x > 0, (self.a, self.b, self.c))):
-            return 1
-        a, b, c = self.a, self.b, self.c
-        if a >= b + c or b >= a + c or c >= a + b:
-            return 2
-        return 3
+
+# a, b, c = map(int, input().split())
+# tr = TriangleChecker(a, b, c)
+# print(tr.is_triangle())
 
 
-a, b, c = map(int, input().split())
-tr = TriangleChecker(a, b, c)
-print(tr.is_triangle())
+# здесь объявляются все необходимые классы
+# class Graph:
+#     def __init__(self, data, is_show=True):
+#         self.data = data[:]
+#         self.is_show = is_show
+#
+#     def set_data(self, data):
+#         setattr(self.data, data)
+#
+#     def show_table(self):
+#         if self.is_show:
+#             print(*self.data)
+#         else:
+#             print('Отображение данных закрыто')
+#
+#     def show_graph(self):
+#         if self.is_show:
+#             print('Графическое отображение данных:', *self.data)
+#         else:
+#             print('Отображение данных закрыто')
+#
+#     def show_bar(self):
+#         if self.is_show:
+#             print('Столбчатая диаграмма:', *self.data)
+#         else:
+#             print('Отображение данных закрыто')
+#
+#     def set_show(self, fl_show):
+#         self.is_show = fl_show
+# # считывание списка из входного потока (эту строку не менять)
+# data_graph = list(map(int, input().split()))
+#
+# # здесь создаются объекты классов и вызываются нужные методы
+# gr = Graph(data_graph)
+# gr.show_bar()
+# gr.set_show(fl_show = False)
+# gr.show_table()
+
+# class CPU:
+#     def __init__(self,name,fr):
+#         self.name = name
+#         self.fr = fr
+#
+# class Memory:
+#     def __init__(self, name, volume):
+#         self.name = name
+#         self.volume = volume
+#
+# class MotherBoard:
+#     def __init__(self,name, cpu, *mems):
+#         self.name = name
+#         self.cpu = cpu
+#         self.total_mem_slots = 4
+#         self.mem_slots = mems[:self.total_mem_slots]
+#
+#     def get_config(self):
+#         return [f'Материнская плата: {self.name}',
+#                     f'Центральный процессор: {self.cpu.name}, {self.cpu.fr}',
+#                     f'Слотов памяти: {self.total_mem_slots}',
+#                     'Память: ' + '; '.join(map(lambda x: f'{x.name} - {x.volume}', self.mem_slots))]
+#
+#
+# mb = MotherBoard('Gigabyte', CPU('Intel', 2000), Memory('Kingston', 1000), Memory('Kingston', 1000))
+
+
+class  Cart:
+    def __init__(self):
+        self.goods = []
+
+    def add(self, gd):
+        self.goods.append(gd)
+
+    def remove(self,indx):
+        self.goods.pop(indx)
+
+    def get_list(self):
+        return [f'{x.name}: {x.price}' for x in self.goods]
+
+
+class Table:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+class TV:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+class Notebook:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+
+class Cup:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+
+cart = Cart()
+tv1 = TV("samsung", 1111)
+tv2 = TV("LG", 1234)
+table = Table("ikea", 2345)
+n1= Notebook("msi", 5433)
+n2 = Notebook("apple", 542)
+c = Cup("keepcup", 43)
+
+cart.add(tv1)
+cart.add(tv2)
+cart.add(table)
+cart.add(n1)
+cart.add(n2)
+cart.add(c)
