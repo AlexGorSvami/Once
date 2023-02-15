@@ -470,14 +470,69 @@
 # PrintPasriangle(10)
 
 
-b = ['а', 'б', 'в', 'г', 'д', 'е', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц',
-     'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я']
-s = input()
-res = s + ' запретил букву '
-for i in b:
-    while i in res:
-        print(res + i)
-        res = res.replace(i, '')
-        res = res.lstrip()
-        res = res.replace('  ',' ')
+# b = ['а', 'б', 'в', 'г', 'д', 'е', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц',
+#      'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я']
+# s = input()
+# res = s + ' запретил букву '
+# for i in b:
+#     while i in res:
+#         print(res + i)
+#         res = res.replace(i, '')
+#         res = res.lstrip()
+#         res = res.replace('  ',' ')
 
+# n = 4
+# [print(*[1 if i == j else 0 for j in range(n)]) for i in range(n)]
+
+# n = 4
+# [print(*[*[i] * n]) for i in range(n)]
+#
+#
+# l = input().split()
+# print([[l[i-1],int(l[i])] for i in range(1,len(l),2)])
+
+
+# # Напишите определение класса Rectangle
+# class Rectangle:
+#     def __init__(self, width, height):
+#         self.width = width
+#         self.height = height
+#
+#     def area(self):
+#         return self.width * self.height
+#
+#     def perimeter(self):
+#         return 2 * (self.width + self.height)
+#
+#
+# # Ниже код для проверки методов класса Rectangle
+# r1 = Rectangle(2, 3)
+# assert r1.width == 2
+# assert r1.height == 3
+# assert r1.perimeter() == 10
+# assert r1.area() == 6
+#
+# r2 = Rectangle(10, 0.5)
+# assert r2.width == 10
+# assert r2.height == 0.5
+# assert r2.perimeter() == 21.0
+# assert r2.area() == 5.0
+# print('Good')
+
+
+class WeatherStation:
+    __shared_atribute = {
+        "temperature": 0, "humidity": 0, "pressure": 0
+    }
+    def __init__(self):
+        self.__dict__ = WeatherStation.__shared_atribute
+
+    def update_data(self, *args):
+        for i, key in enumerate(WeatherStation.__shared_atribute):
+
+
+
+
+    def get_current_data(self):
+        for key, value in self.__dict__.items():
+            return (value)
