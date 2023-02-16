@@ -286,14 +286,36 @@
 #         print(word, letter)
 #         word = word.replace(letter, '').replace('  ', ' ').strip()
 
-mas = input().split()
-n = int(input())
-def chanked(mas,n):
-    res = []
-    for i in range(len(mas)):
-        if mas[:n]:
-            res.append(mas[:n])
-            del mas[:n]
-    return res
+# mas = input().split()
+# n = int(input())
+# def chanked(mas,n):
+#     res = []
+#     for i in range(len(mas)):
+#         if mas[:n]:
+#             res.append(mas[:n])
+#             del mas[:n]
+#     return res
+#
+# print(chanked(mas,n))
 
-print(chanked(mas,n))
+def print_matrix(matrix, n, width=1):
+    for r in range(n):
+        for c in range(n):
+            print(str(matrix[r][c]).ljust(width), end=' ')
+        print()
+
+
+n = int(input())
+matrix = []
+for i in range(n):
+    temp = [int(num) for num in input().split()]
+    matrix.append(temp)
+
+
+n = int(input())
+m = int(input())
+mas = [[input() for j in range(m)] for i in range(n)]
+for i in mas:
+    for j in i:
+        print(*j, end=' ')
+    print()
