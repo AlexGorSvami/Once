@@ -520,19 +520,25 @@
 # print('Good')
 
 
-class WeatherStation:
-    __shared_atribute = {
-        "temperature": 0, "humidity": 0, "pressure": 0
-    }
-    def __init__(self):
-        self.__dict__ = WeatherStation.__shared_atribute
-
-    def update_data(self, *args):
-        for i, key in enumerate(WeatherStation.__shared_atribute):
-
-
+# class WeatherStation:
+#     __shared_atribute = {
+#         "temperature": 0, "humidity": 0, "pressure": 0
+#     }
+#     def __init__(self):
+#         self.__dict__ = WeatherStation.__shared_atribute
+#
+#     def update_data(self, *args):
+#         for i, key in enumerate(WeatherStation.__shared_atribute):
 
 
-    def get_current_data(self):
-        for key, value in self.__dict__.items():
-            return (value)
+n = int(input())
+mas = [[int(j) for j in input().split()] for i in range(n)]
+count = 0
+for i in range(n):
+    mid = sum(mas[i]) / len(mas[i])
+    for j in range(n):
+        if mas[i][j] > mid:
+            count += 1
+    print(count)
+    count = 0
+
