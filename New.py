@@ -530,15 +530,77 @@
 #     def update_data(self, *args):
 #         for i, key in enumerate(WeatherStation.__shared_atribute):
 
+#
+# n = int(input())
+# mas = [[int(j) for j in input().split()] for i in range(n)]
+# count = 0
+# for i in range(n):
+#     mid = sum(mas[i]) / len(mas[i])
+#     for j in range(n):
+#         if mas[i][j] > mid:
+#             count += 1
+#     print(count)
+#     count = 0
+
+
+# l = [i.split('=') for i in input().split()]
+# for i in range(len(l)):
+#     l[i][1] = int(l[i][1])
+# d = dict(l)
+# print(*sorted(d.items()))
+
+# d = dict(c.split('=') for c in input().split())
+# for c in d:
+#   d[c] = int(d[c])
+# print(*sorted(d.items()))
+
+
+# lst = [i.split('=') for i in input.split()]
+# d = {i: int(v) for i, v in lst}
+# print(*sorted(d.items()))
+
+
+# ls = [i.split('=') for i in input().split()]
+# d = {i:val for i, val in ls}
+# if  'house' in d and 'True' in d and '5' in d:
+#     print('ДА')
+# else:
+#     print('НЕТ')
+
+
+# d = dict([i.split('=') for i in input().split()])
+# print('ДА' if 'house' in d and 'True' in d and '5' in d else 'НЕТ')
+
+# lst = input().split()
+# d = {}
+# for i in lst:
+#     key = i[:2]
+#     if key not in d:
+#         d[key] = []
+#     d[key].append(i)
+#
+# print(*sorted(d.items()))
+
+# import sys
+#
+# # считывание списка из входного потока
+# ls = list(map(str.strip, sys.stdin.readlines()))
+# d = {}
+# for i in range(len(ls)):
+#     ls[i] = ls[i].split()
+#     key = ls[i][1]
+#     if key not in d:
+#         d[key] = []
+#     d[key].append(ls[i][0])
+#
+# print(*sorted(d.items()))
+
 
 n = int(input())
-mas = [[int(j) for j in input().split()] for i in range(n)]
-count = 0
-for i in range(n):
-    mid = sum(mas[i]) / len(mas[i])
-    for j in range(n):
-        if mas[i][j] > mid:
-            count += 1
-    print(count)
-    count = 0
-
+d = {}
+while n != 0:
+    if n not in d:
+        d[n] = round(n**0.5, 2)
+    else:
+        print(f'значение из кэша: {d[n]}')
+    n = int(input())

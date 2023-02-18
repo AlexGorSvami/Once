@@ -499,3 +499,19 @@ import sys
 # cart.add(n1)
 # cart.add(n2)
 # cart.add(c)
+
+class ListOdject:
+    def __init__(self, data):
+        self.data = data
+        self.next_obj = None
+
+    def link(self, obj):
+        self.next_obj = obj
+
+
+head_obj = ListOdject(lst_in[0])
+obj = head_obj
+for x in range(1, len(lst_in)):
+    obj_new = ListOdject(lst_in[i])
+    obj.link(obj_new)
+    obj = obj_new
