@@ -604,3 +604,92 @@
 #     else:
 #         print(f'значение из кэша: {d[n]}')
 #     n = int(input())
+
+# morze = {'а': '.-', 'б': '-...', 'в': '.--', 'г': '--.', 'д': '-..', 'е': '.', 'ё': '.', 'ж': '...-', 'з': '--..',
+#              'и': '..', 'й': '.---', 'к': '-.-', 'л': '.-..', 'м': '--', 'н': '-.', 'о': '---', 'п': '.--.', 'р': '.-.',
+#              'с': '...', 'т': '-', 'у': '..-', 'ф': '..-.', 'х': '....', 'ц': '-.-.', 'ч': '---.', 'ш': '----',
+#              'щ': '--.-', 'ъ': '--.--', 'ы': '-.--', 'ь': '-..-', 'э': '..-..', 'ю': '..--', 'я': '.-.-', ' ': '-...-'}
+#
+# word = 'Сергей Балакирев'
+# res = ''
+# for i in word:
+#     if i.lower() in morze:
+#         res +=morze[i.lower()] + ' '
+# print(res.strip())
+
+
+# morze = {'а': '.-', 'б': '-...', 'в': '.--', 'г': '--.', 'д': '-..', 'е': '.', 'ж': '...-', 'з': '--..',
+#          'и': '..', 'й': '.---', 'к': '-.-', 'л': '.-..', 'м': '--', 'н': '-.', 'о': '---', 'п': '.--.', 'р': '.-.',
+#          'с': '...', 'т': '-', 'у': '..-', 'ф': '..-.', 'х': '....', 'ц': '-.-.', 'ч': '---.', 'ш': '----',
+#          'щ': '--.-', 'ъ': '--.--', 'ы': '-.--', 'ь': '-..-', 'э': '..-..', 'ю': '..--', 'я': '.-.-', ' ': '-...-'}
+# reversed_morze = {v: k for k, v in morze.items()}
+# print(reversed_morze)
+# kod = input().split()
+# for i in kod:
+#     print(reversed_morze[i], end='')
+
+
+# numbers = [int(i) for i in input().split()]
+# res = dict.fromkeys(numbers)
+# print(*res.keys())
+
+# print(*dict.fromkeys(input().split()))
+
+
+import sys
+
+# считывание списка из входного потока
+# ls = list(map(str.strip, sys.stdin.readlines()))
+#
+# dic = {}
+# for i in ls:
+#     key, val = i.split()
+#     if key not in dic:
+#         dic[key] = []
+#     dic[key].append(val)
+#
+# [print(*[key + ':', ', '.join(val)]) for key, val in dic.items()]
+
+
+things = {'карандаш': 20, 'зеркальце': 100, 'зонт': 500, 'рубашка': 300,
+          'брюки': 1000, 'бумага': 200, 'молоток': 600, 'пила': 400, 'удочка': 1200,
+          'расческа': 40, 'котелок': 820, 'палатка': 5240, 'брезент': 2130, 'спички': 10}
+max_weight = int(input())*1000
+res = []
+#
+for key, val in sorted(things.items(), key=lambda x: -x[1]):
+    if max_weight - val >= 0:
+        max_weight -=val
+        res.append(key)
+    else:
+        continue
+
+print(res)
+
+# import sys
+#
+# # считывание списка из входного потока
+# lst_in = list(map(str.strip, sys.stdin.readlines()))
+
+# d = {}
+# for i in lst_in:
+#     if i not in d:
+#         d[i] = i
+#         print(f'HTML-страница для адреса {d[i]}')
+#     else:
+#         print(f'Взято из кэша: HTML-страница для адреса {d[i]}')
+
+
+
+
+# import sys
+#
+# # считывание списка из входного потока
+# lst_in = list(map(str.strip, sys.stdin.readlines()))
+#
+# # здесь продолжайте программу (используйте список lst_in)
+# used = {}
+# for line in lst_in:
+#     print(f'{used.get(line,"")}HTML-страница для адреса {line}')
+#     used[line] = 'Взято из кэша: '
+

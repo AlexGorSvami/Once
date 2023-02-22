@@ -297,25 +297,55 @@
 #     return res
 #
 # print(chanked(mas,n))
+#
+# def print_matrix(matrix, n, width=1):
+#     for r in range(n):
+#         for c in range(n):
+#             print(str(matrix[r][c]).ljust(width), end=' ')
+#         print()
+#
+#
+# n = int(input())
+# matrix = []
+# for i in range(n):
+#     temp = [int(num) for num in input().split()]
+#     matrix.append(temp)
+#
+#
+# n = int(input())
+# m = int(input())
+# mas = [[input() for j in range(m)] for i in range(n)]
+# for i in mas:
+#     for j in i:
+#         print(*j, end=' ')
+#     print()
 
-def print_matrix(matrix, n, width=1):
-    for r in range(n):
-        for c in range(n):
-            print(str(matrix[r][c]).ljust(width), end=' ')
-        print()
+# n = int(input())
+# matrix = [[int(j) for j in input().split()] for i in range(n)]
+# res = -99999
+# for i in range(n):
+#     for j in range(n):
+#         if (i >= j and i <= n - 1 - j) or (i <= j and i >= n - 1 - j):
+#             if matrix[i][j] > res:
+#                 res = matrix[i][j]
+#
+# print(res)
 
 
-n = int(input())
-matrix = []
-for i in range(n):
-    temp = [int(num) for num in input().split()]
-    matrix.append(temp)
-
-
-n = int(input())
-m = int(input())
-mas = [[input() for j in range(m)] for i in range(n)]
-for i in mas:
-    for j in i:
-        print(*j, end=' ')
-    print()
+# n = int(input())
+# matrix = [[int(j) for j in input().split()] for i in range(n)]
+# s1,s2,s3,s4 = 0,0,0,0
+# for i in range(n):
+#     for j in range(n):
+#         if i < j and i < n - 1 - j:
+#             s1 +=  matrix[i][j]
+#         if i < j and i > n - 1 - j:
+#             s2 +=  matrix[i][j]
+#         if i > j and i > n - 1 - j:
+#             s3 +=  matrix[i][j]
+#         if i > j and i < n - 1 - j:
+#             s4 +=  matrix[i][j]
+# print(f"""Верхняя четверть: {s1}
+# Правая четверть: {s2}
+# Нижняя четверть: {s3}
+# Левая четверть: {s4}""")
