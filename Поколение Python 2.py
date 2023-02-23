@@ -349,3 +349,18 @@
 # Правая четверть: {s2}
 # Нижняя четверть: {s3}
 # Левая четверть: {s4}""")
+
+
+# n,m = int(input()), int(input())
+# mas = [[int(j) for j in input().split()] for i in range(n)]
+# maxx = max(max(mas, key=max))
+# for i in range(n):
+#     if maxx in mas[i]:
+#         print(i, mas[i].index(maxx))
+#         break
+
+
+n, m = int(input()), int(input())
+mas = [[str(i *   j).ljust(3) for i in  range(m)] for j in range(n)]
+for i in mas:
+    print(*i)

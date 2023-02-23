@@ -651,20 +651,20 @@ import sys
 # [print(*[key + ':', ', '.join(val)]) for key, val in dic.items()]
 
 
-things = {'карандаш': 20, 'зеркальце': 100, 'зонт': 500, 'рубашка': 300,
-          'брюки': 1000, 'бумага': 200, 'молоток': 600, 'пила': 400, 'удочка': 1200,
-          'расческа': 40, 'котелок': 820, 'палатка': 5240, 'брезент': 2130, 'спички': 10}
-max_weight = int(input())*1000
-res = []
+# things = {'карандаш': 20, 'зеркальце': 100, 'зонт': 500, 'рубашка': 300,
+#           'брюки': 1000, 'бумага': 200, 'молоток': 600, 'пила': 400, 'удочка': 1200,
+#           'расческа': 40, 'котелок': 820, 'палатка': 5240, 'брезент': 2130, 'спички': 10}
+# max_weight = int(input())*1000
+# res = []
+# #
+# for key, val in sorted(things.items(), key=lambda x: -x[1]):
+#     if max_weight - val >= 0:
+#         max_weight -=val
+#         res.append(key)
+#     else:
+#         continue
 #
-for key, val in sorted(things.items(), key=lambda x: -x[1]):
-    if max_weight - val >= 0:
-        max_weight -=val
-        res.append(key)
-    else:
-        continue
-
-print(res)
+# print(res)
 
 # import sys
 #
@@ -680,8 +680,6 @@ print(res)
 #         print(f'Взято из кэша: HTML-страница для адреса {d[i]}')
 
 
-
-
 # import sys
 #
 # # считывание списка из входного потока
@@ -692,4 +690,43 @@ print(res)
 # for line in lst_in:
 #     print(f'{used.get(line,"")}HTML-страница для адреса {line}')
 #     used[line] = 'Взято из кэша: '
+
+
+# t = tuple(input().split())
+# t = tuple(i.lower() for i in t if 'ва' in i.lower())
+# print(*t)
+
+# t = tuple(map(int, input().split()))
+# t1 = []
+# for i in  t:
+#     if i not in t1:
+#         t1.append(i)
+#
+#
+# tup = tuple(input().split())
+# tup2 = ()
+#
+# for i in tup:
+#     if i not in tup2:
+#         tup2 += i,
+
+# non_unic = tuple(input().split())
+# print(*(i for i,val in enumerate(non_unic) if non_unic.count(val) >  1 ))
+
+
+# n = int(input())
+# t = ((1, 0, 0, 0, 0),
+#      (0, 1, 0, 0, 0),
+#      (0, 0, 1, 0, 0),
+#      (0, 0, 0, 1, 0),
+#      (0, 0, 0, 0, 1))
+# for i in range(n):
+#     print(*t[i][:n])
+
+# import sys
+#
+# # считывание списка из входного потока
+# ls = list(map(str.strip, sys.stdin.readlines()))
+#
+# print(tuple(tuple(i.split()) for i in ls ))
 
