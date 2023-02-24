@@ -730,3 +730,13 @@ import sys
 #
 # print(tuple(tuple(i.split()) for i in ls ))
 
+# res = {int(i) for i in input() if i.isdigit()}
+# print(*sorted(res) if len(res) > 0 else {'НЕТ'})
+ls = ['EvgeniyK: спасибо большое!',
+'LinaTroshka: лайк и подписка!',
+'Sergey Karandeev: крутое видео!',
+'Евгений Соснин: обожаю',
+'EvgeniyK: это повтор?',
+'Sergey Karandeev: нет, это новое видео']
+lst = [i.split(':')[0] for i in ls]
+print(len(set(lst)))
