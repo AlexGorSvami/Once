@@ -732,11 +732,44 @@ import sys
 
 # res = {int(i) for i in input() if i.isdigit()}
 # print(*sorted(res) if len(res) > 0 else {'НЕТ'})
-ls = ['EvgeniyK: спасибо большое!',
-'LinaTroshka: лайк и подписка!',
-'Sergey Karandeev: крутое видео!',
-'Евгений Соснин: обожаю',
-'EvgeniyK: это повтор?',
-'Sergey Karandeev: нет, это новое видео']
-lst = [i.split(':')[0] for i in ls]
-print(len(set(lst)))
+
+
+# ls = ['EvgeniyK: спасибо большое!',
+# 'LinaTroshka: лайк и подписка!',
+# 'Sergey Karandeev: крутое видео!',
+# 'Евгений Соснин: обожаю',
+# 'EvgeniyK: это повтор?',
+# 'Sergey Karandeev: нет, это новое видео']
+# lst = [i.split(':')[0] for i in ls]
+# print(len(set(lst)))
+
+
+# mas =  input().split()
+# d = {int(ind):val for ind,val in enumerate(mas[1:],int(mas[0]))}
+# print(d[4])
+#
+# start, *names = input().split()
+# print(dict(enumerate(names, int(start)))[4])
+#
+# mas = input().lower().split()
+# keys = {i for i in mas}
+# d = {i:mas.count(i) for i in keys}
+# print(d.get('и', 0))
+#
+#
+# lst = input().lower().split()
+# print({w: lst.count(w) for w in set(lst)}.get('и', 0))
+
+ls = ['Пушкин: Сказака о рыбаке и рыбке',
+      'Есенин: Письмо к женщине',
+      'Тургенев: Муму',
+      'Пушкин: Евгений Онегин',
+      'Есенин: Русь']
+
+# d = {}
+# for i in ls:
+#     key, value = i.split(': ')
+#     d.setdefault(key, set()).add(value)
+
+d = {i.split(':')[0] : {j.split(': ')[1] for j in ls if i.split()[0] == j.split()[0]} for i in ls}
+print(d)
