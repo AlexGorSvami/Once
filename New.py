@@ -760,16 +760,21 @@ import sys
 # lst = input().lower().split()
 # print({w: lst.count(w) for w in set(lst)}.get('и', 0))
 
-ls = ['Пушкин: Сказака о рыбаке и рыбке',
-      'Есенин: Письмо к женщине',
-      'Тургенев: Муму',
-      'Пушкин: Евгений Онегин',
-      'Есенин: Русь']
+# ls = ['Пушкин: Сказака о рыбаке и рыбке',
+#       'Есенин: Письмо к женщине',
+#       'Тургенев: Муму',
+#       'Пушкин: Евгений Онегин',
+#       'Есенин: Русь']
+#
+# # d = {}
+# # for i in ls:
+# #     key, value = i.split(': ')
+# #     d.setdefault(key, set()).add(value)
+#
+# d = {i.split(':')[0] : {j.split(': ')[1] for j in ls if i.split()[0] == j.split()[0]} for i in ls}`
+# print(d)
 
-# d = {}
-# for i in ls:
-#     key, value = i.split(': ')
-#     d.setdefault(key, set()).add(value)
+def chet(x):
+    return not x % 2
 
-d = {i.split(':')[0] : {j.split(': ')[1] for j in ls if i.split()[0] == j.split()[0]} for i in ls}
-print(d)
+[print(i) for i in iter(input, '1') if chet(int(i))]
