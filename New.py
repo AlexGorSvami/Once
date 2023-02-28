@@ -638,6 +638,7 @@
 
 import sys
 
+
 # считывание списка из входного потока
 # ls = list(map(str.strip, sys.stdin.readlines()))
 #
@@ -774,7 +775,91 @@ import sys
 # d = {i.split(':')[0] : {j.split(': ')[1] for j in ls if i.split()[0] == j.split()[0]} for i in ls}`
 # print(d)
 
-def chet(x):
-    return not x % 2
+# def chet(x):
+#     return not x % 2
+#
+# [print(i) for i in iter(input, '1') if chet(int(i))]
+#
+#
+# def not_even(num:int)->int:
+#     return num % 2
+# print(*[int(i) for i in input().split() if not_even(int(i))])
+#
+# class Library:
+#     def __init__(self, books: list):
+#         self.__books = books
+#
+#     def __check_availability(self, book):
+#         return book in self.__books
+#
+#
+#     def search_book(self, book):
+#         return self.__check_availability(book)
+#
+#     def return_book(self,book):
+#         self.__books.append(book)
+#
+#     def _checkout_book(self, book):
+#         if book in self.__books:
+#             self.__books.remove(book)
+#             return True
+#         return False
+#
+#
+# library = Library(["War and Peace", "Moby-Dick", "Pride and Prejudice"])
+#
+# assert library._Library__books == ["War and Peace", "Moby-Dick", "Pride and Prejudice"]
+# assert library.search_book("Moby-Dick") == True
+# assert library.search_book("Jane Air") == False
+#
+# assert library._Library__check_availability("War and Peace") == True
+# assert library._checkout_book("Moby-Dick") == True
+# assert library._Library__books == ["War and Peace", "Pride and Prejudice"]
+#
+# assert library.search_book("Moby-Dick") == False
+# assert library.return_book("Moby-Dick") is None
+# assert library._Library__books == ["War and Peace", "Pride and Prejudice", "Moby-Dick"]
+# assert library.search_book("Moby-Dick") == True
+# print('Good')
 
-[print(i) for i in iter(input, '1') if chet(int(i))]
+
+class Employee:
+    def __init__(self, name, position, hours_worked, hourly_rate):
+        self.name = name
+        self.__position = position
+        self.__hours_worked = hours_worked
+        self.__hourly_rate = hourly_rate
+
+    def __calculate_salary(self):
+        return self.__hours_worked * self.__hourly_rate
+
+    def _set_position(self, position):
+        self.__position = position
+
+    def get_position(self):
+        return self.__position
+
+    def get_salary(self):
+        return self.__calculate_salary()
+
+    def get_employee_details(self):
+        return f"Name: {self.name}, Position: {self.__position}, Salary: {self.__calculate_salary()}"
+
+
+employee = Employee("Джеки Чан", 'manager', 20, 40)
+assert employee.name == 'Джеки Чан'
+assert employee._Employee__hours_worked == 20
+assert employee._Employee__hourly_rate == 40
+assert employee._Employee__position == 'manager'
+assert employee.get_position() == 'manager'
+assert employee.get_salary() == 800
+assert employee._Employee__calculate_salary() == 800
+assert employee.get_employee_details() == 'Name: Джеки Чан, Position: manager, Salary: 800'
+employee._set_position('Director')
+assert employee.get_employee_details() == 'Name: Джеки Чан, Position: Director, Salary: 800'
+
+employee_2 = Employee("Пирс Броснан", 'actor', 35, 30)
+assert employee_2._Employee__calculate_salary() == 1050
+assert employee_2.get_employee_details() == 'Name: Пирс Броснан, Position: actor, Salary: 1050'
+
+print('Good')
