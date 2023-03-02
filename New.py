@@ -873,7 +873,67 @@ import sys
 # print(a)
 
 
-def get_len(s):
-    return s, len(s)
-d = dict(get_len(i) for i in input().split())
-print(*sorted(d, key=lambda x: d[x]))
+# def get_len(s):
+#     return s, len(s)
+# d = dict(get_len(i) for i in input().split())
+# print(*sorted(d, key=lambda x: d[x]))
+
+
+# from collections import deque
+#
+# lst_in = list(map(int, input().split()))
+# q = deque()
+# q.extend(lst_in)
+# for i in range(3):
+#     print(q.popleft(),end=' ')
+#
+#
+# from collections import deque
+#
+# lst_in = list(map(str.strip, input().split()))
+# q = deque()
+# q.extend(lst_in)
+# q.insert(2,'run')
+# q.remove('edit')
+
+# from collections import deque
+#
+# data = list(map(int, input().split()))
+# fifo = deque()
+# for i in data:
+#     fifo.appendleft(i)
+# print(*[fifo.pop() for i in range(3)])
+
+
+# from collections import deque
+#
+# data = [1, 3, 4, 5, 6, 7, 8, 9, 0, 7, 6, 4, 3,]
+# buff = deque(maxlen=10)
+# buff.extendleft(data)
+# print(*[buff.pop() for i in range(3)])
+
+# data = list(map(int, input().split()))
+# lifo = [i for i in data]
+# print(*[lifo.pop() for i in range(2)])
+
+
+# def get_nod(a, b):
+#     if b > a:
+#         a, b = b, a
+#     while  b != 0:
+#         a, b = b, a % b
+#     return a
+#
+# print(get_nod(15, 121050))
+
+t = {'ё': 'yo', 'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ж': 'zh',
+     'з': 'z', 'и': 'i', 'й': 'y', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n', 'о': 'o', 'п': 'p',
+    'р': 'r', 'с': 's', 'т': 't', 'у': 'u', 'ф': 'f', 'х': 'h', 'ц': 'c', 'ч': 'ch', 'ш': 'sh',
+    'щ': 'shch', 'ъ': '', 'ы': 'y', 'ь': '', 'э': 'e', 'ю': 'yu', 'я': 'ya'}
+
+def ru_en(st, sep='-'):
+    return ''.join([t[i] if i in t else sep if i == ' ' else i for i in st])
+
+st = input().lower()
+print(ru_en(st))
+print(ru_en(st, sep='+'))
