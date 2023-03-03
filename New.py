@@ -926,14 +926,41 @@ import sys
 #
 # print(get_nod(15, 121050))
 
-t = {'ё': 'yo', 'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ж': 'zh',
-     'з': 'z', 'и': 'i', 'й': 'y', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n', 'о': 'o', 'п': 'p',
-    'р': 'r', 'с': 's', 'т': 't', 'у': 'u', 'ф': 'f', 'х': 'h', 'ц': 'c', 'ч': 'ch', 'ш': 'sh',
-    'щ': 'shch', 'ъ': '', 'ы': 'y', 'ь': '', 'э': 'e', 'ю': 'yu', 'я': 'ya'}
+# t = {'ё': 'yo', 'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ж': 'zh',
+#      'з': 'z', 'и': 'i', 'й': 'y', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n', 'о': 'o', 'п': 'p',
+#     'р': 'r', 'с': 's', 'т': 't', 'у': 'u', 'ф': 'f', 'х': 'h', 'ц': 'c', 'ч': 'ch', 'ш': 'sh',
+#     'щ': 'shch', 'ъ': '', 'ы': 'y', 'ь': '', 'э': 'e', 'ю': 'yu', 'я': 'ya'}
+#
+# def ru_en(st, sep='-'):
+#     return ''.join([t[i] if i in t else sep if i == ' ' else i for i in st])
+#
+# st = input().lower()
+# print(ru_en(st))
+# print(ru_en(st, sep='+'))
 
-def ru_en(st, sep='-'):
-    return ''.join([t[i] if i in t else sep if i == ' ' else i for i in st])
 
-st = input().lower()
-print(ru_en(st))
-print(ru_en(st, sep='+'))
+# def get_data_fig(*args, **kwargs):
+#     per = 0
+#     for i in args:
+#         per += i
+#     res = [per]
+#     if 'type' in kwargs:
+#         res.append(kwargs['type'])
+#     if 'color' in kwargs:
+#         res.append(kwargs['color'])
+#     if 'closed' in kwargs:
+#         res.append(kwargs['closed'])
+#     if 'width' in kwargs:
+#         res.append(kwargs['width'])
+#
+#     return (tuple(res))
+
+
+def get_data_fig(*args, **kwargs):
+    kwargs = [kwargs[i] for i in ['type', 'color', 'closed', 'width'] if i in kwargs]
+    return (sum(args), *kwargs)
+
+
+print(get_data_fig(5, 4, 9, 9, 9, 9, type=False, color='Yellow', closed=True, width=10))
+print(get_data_fig(5, 4, 9, 9, 9, 9, color='Yellow', type=False, closed=True, width=10))
+print(get_data_fig(5, 4, color='Yellow', type=False, closed=True))
