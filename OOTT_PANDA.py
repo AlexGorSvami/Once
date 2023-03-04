@@ -527,6 +527,7 @@ class Cell:
 class GamePole:
     def __init__(self, N, M):
         self._n = N
+
         self._m = M
         self.pole = [[Cell() for n in range(self._n)] for n in range(self._n)]
         self.init()
