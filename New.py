@@ -956,11 +956,45 @@ import sys
 #     return (tuple(res))
 
 
-def get_data_fig(*args, **kwargs):
-    kwargs = [kwargs[i] for i in ['type', 'color', 'closed', 'width'] if i in kwargs]
-    return (sum(args), *kwargs)
+# def get_data_fig(*args, **kwargs):
+#     kwargs = [kwargs[i] for i in ['type', 'color', 'closed', 'width'] if i in kwargs]
+#     return (sum(args), *kwargs)
+#
+#
+# print(get_data_fig(5, 4, 9, 9, 9, 9, type=False, color='Yellow', closed=True, width=10))
+# print(get_data_fig(5, 4, 9, 9, 9, 9, color='Yellow', type=False, closed=True, width=10))
+# print(get_data_fig(5, 4, color='Yellow', type=False, closed=True))
 
 
-print(get_data_fig(5, 4, 9, 9, 9, 9, type=False, color='Yellow', closed=True, width=10))
-print(get_data_fig(5, 4, 9, 9, 9, 9, color='Yellow', type=False, closed=True, width=10))
-print(get_data_fig(5, 4, color='Yellow', type=False, closed=True))
+# lst_c = *input().split(),
+# print(lst_c)
+#
+#
+# numbers, cities = map(float, input().split()), input().split()
+# lst = [*numbers, *cities]
+# print(*lst)
+
+class BankAccount:
+
+    def __init__(self,account_number, balance):
+        self._account_number = account_number
+        self._balance = balance
+
+    def get_account_number(self):
+        return self._account_number
+
+    def get_balance(self):
+        return self._balance
+
+    def set_balance(self, value):
+        self._balance = value
+
+account = BankAccount("1234567890", 1000)
+assert account._balance == 1000
+assert account._account_number == "1234567890"
+assert account.get_account_number() == "1234567890"
+assert account.get_balance() == 1000
+account.set_balance(1500)
+assert account.get_balance() == 1500
+
+print('Good')
