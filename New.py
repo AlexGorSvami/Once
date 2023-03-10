@@ -1000,9 +1000,27 @@ import sys
 # print('Good')
 
 
+# N = int(input())
+#
+# def get_rec_N(N):
+#     if N > 1:
+#         get_rec_N(N-1)
+#     print(N)
+
+# def get_rec_sum(mas:list)->int:
+#     if len(mas) == 1:
+#         return mas[0]
+#     return mas[0]  + get_rec_sum(mas[1:])
+#
+# mas = list(map(int, input().split()))
+# print(get_rec_sum(mas))
+
+
 N = int(input())
 
-def get_rec_N(N):
-    if N > 1:
-        get_rec_N(N-1)
-    print(N)
+def fib_rec(N, f=[1, 1]):
+    if len(f) < N:
+        f.append(f[-1] + f[-2])
+        fib_rec(N, f)
+    return f
+
