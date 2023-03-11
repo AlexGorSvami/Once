@@ -1016,11 +1016,26 @@ import sys
 # print(get_rec_sum(mas))
 
 
-N = int(input())
+# N = int(input())
+#
+# def fib_rec(N, f=[1, 1]):
+#     if len(f) < N:
+#         f.append(f[-1] + f[-2])
+#         fib_rec(N, f)
+#     return f
 
-def fib_rec(N, f=[1, 1]):
-    if len(f) < N:
-        f.append(f[-1] + f[-2])
-        fib_rec(N, f)
-    return f
+
+d = [1, 2, [True, False], ["Москва", "Уфа", [100, 101], ['True', [-2, -1]]], 7.89]
+
+def get_line_list(d,a=[]):
+    # if a == None:
+    #     a = []
+    for i in d:
+        if type(i) != list:
+            a.append(i)
+        else:
+            get_line_list(i)
+    return a
+
+print(get_line_list(d))
 
