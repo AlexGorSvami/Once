@@ -1090,45 +1090,55 @@ import sys
 # assert employee._Employee__get_salary() == 55000
 
 
-class UserMail:
-    def __init__(self, login, email):
-        self.login = login
-        self.__email = email
+# class UserMail:
+#     def __init__(self, login, email):
+#         self.login = login
+#         self.__email = email
+#
+#     def get_email(self):
+#         return self.__email
+#
+#     def set_email(self, value):
+#         if '.' in value and '@' in value and value.count('@') == 1 and value.index('.') > value.index('@'):
+#             self.__email = value
+#         else:
+#             print(f'ErrorMail:{value}')
+#
+#     email = property(fget=get_email, fset=set_email)
+#
+#
+# jim = UserMail("aka47", 'hello@com.org')
+# assert jim.login == "aka47"
+# assert jim._UserMail__email == "hello@com.org"
+# assert isinstance(jim, UserMail)
+# assert isinstance(type(jim).email, property), 'Вы не создали property email'
+#
+# jim.email = [1, 2, 3]  # печатает ErrorMail:[1, 2, 3]
+# jim.email = 'hello@@re.ee'  # печатает ErrorMail:hello@@re.ee
+# jim.email = 'hello@re.w3'
+# assert jim.email == 'hello@re.w3'
+#
+# k = UserMail('belosnezhka', 'prince@wait.you')
+# assert k.email == 'prince@wait.you'
+# assert k.login == 'belosnezhka'
+# assert isinstance(k, UserMail)
+#
+# k.email = {1, 2, 3}  # печатает ErrorMail:{1, 2, 3}
+# k.email = 'prince@still@.wait'  # печатает ErrorMail:prince@still@.wait
+# k.email = 'prince@stillwait'  # печатает ErrorMail:prince@stillwait
+# k.email = 'prince@still.wait'
+# assert k.get_email() == 'prince@still.wait'
+# k.email = 'pri.nce@stillwait'  # печатает ErrorMail:pri.nce@stillwait
+# assert k.email == 'priince@still.wait'
 
-    def get_email(self):
-        return self.__email
 
-    def set_email(self, value):
-        if '.' in value and '@' in value and value.count('@') == 1 and value.index('.') > value.index('@'):
-            self.__email = value
-        else:
-            print(f'ErrorMail:{value}')
+class Notebook:
+    def __init__(self, notes):
+        self._notes = notes
 
-    email = property(fget=get_email, fset=set_email)
-
-
-jim = UserMail("aka47", 'hello@com.org')
-assert jim.login == "aka47"
-assert jim._UserMail__email == "hello@com.org"
-assert isinstance(jim, UserMail)
-assert isinstance(type(jim).email, property), 'Вы не создали property email'
-
-jim.email = [1, 2, 3]  # печатает ErrorMail:[1, 2, 3]
-jim.email = 'hello@@re.ee'  # печатает ErrorMail:hello@@re.ee
-jim.email = 'hello@re.w3'
-assert jim.email == 'hello@re.w3'
-
-k = UserMail('belosnezhka', 'prince@wait.you')
-assert k.email == 'prince@wait.you'
-assert k.login == 'belosnezhka'
-assert isinstance(k, UserMail)
-
-k.email = {1, 2, 3}  # печатает ErrorMail:{1, 2, 3}
-k.email = 'prince@still@.wait'  # печатает ErrorMail:prince@still@.wait
-k.email = 'prince@stillwait'  # печатает ErrorMail:prince@stillwait
-k.email = 'prince@still.wait'
-assert k.get_email() == 'prince@still.wait'
-k.email = 'pri.nce@stillwait'  # печатает ErrorMail:pri.nce@stillwait
-assert k.email == 'priince@still.wait'
-
-
+    @property
+    def notes_list(self):
+        print(*self._notes)
+        
+note = Notebook(['Buy Potato', 'Buy Carrot', 'Wash car'])
+note.notes_list
