@@ -1040,50 +1040,95 @@ import sys
 # print(get_line_list(d))
 
 
-class Employee:
-    def __init__(self, name, salary):
-        self.__name = name
-        self.__salary = salary
+# class Employee:
+#     def __init__(self, name, salary):
+#         self.__name = name
+#         self.__salary = salary
+#
+#     def __get_name(self):
+#         return self.__name
+#
+#     def __get_salary(self):
+#         return self.__salary
+#
+#     def __set_salary(self, value):
+#         if (type(value) ==  float or type(value) == int) and value > 0:
+#             self.__salary = value
+#         else:
+#             print(f'ErrorValue:{value}')
+#
+#     title = property(
+#         fget=__get_name)
+#
+#     reward = property(
+#         fget=__get_salary,
+#         fset=__set_salary
+#     )
+#
+#
+# # Ниже код для проверки методов класса Employee
+# employee = Employee("John Doe", 50000)
+# assert employee.title == "John Doe"
+# assert employee._Employee__name == "John Doe"
+# assert isinstance(employee, Employee)
+# assert isinstance(type(employee).title, property), 'Вы не создали property title'
+# assert isinstance(type(employee).reward, property), 'Вы не создали property reward'
+#
+# assert employee.reward == 50000
+# employee.reward = -100  # ErrorValue:-100
+#
+# employee.reward = 1.5
+# assert employee.reward == 1.5
+#
+# employee.reward = 70000
+# assert employee.reward == 70000
+# employee.reward = 'hello'  # Печатает ErrorValue:hello
+# employee.reward = '777'  # Печатает ErrorValue:777
+# employee.reward = [1, 2]  # Печатает ErrorValue:[1, 2]
+# assert employee.reward == 70000
+# employee._Employee__set_salary(55000)
+# assert employee._Employee__get_salary() == 55000
 
-    def __get_name(self):
-        return self.__name
 
-    def __get_salary(self):
-        return self.__salary
+class UserMail:
+    def __init__(self, login, email):
+        self.login = login
+        self.__email = email
 
-    def __set_salary(self, value):
-        if (type(value) ==  float or type(value) == int) and value > 0:
-            self.__salary = value
-        print(f'ErrorValue:{value}')
+    def get_email(self):
+        return self.__email
 
-    title = property(
-        fget=__get_name)
+    def set_email(self, value):
+        if '.' in value and '@' in value and value.count('@') == 1 and value.index('.') > value.index('@'):
+            self.__email = value
+        else:
+            print(f'ErrorMail:{value}')
 
-    reward = property(
-        fget=__get_salary,
-        fset=__set_salary
-    )
+    email = property(fget=get_email, fset=set_email)
 
 
-# Ниже код для проверки методов класса Employee
-employee = Employee("John Doe", 50000)
-assert employee.title == "John Doe"
-assert employee._Employee__name == "John Doe"
-assert isinstance(employee, Employee)
-assert isinstance(type(employee).title, property), 'Вы не создали property title'
-assert isinstance(type(employee).reward, property), 'Вы не создали property reward'
+jim = UserMail("aka47", 'hello@com.org')
+assert jim.login == "aka47"
+assert jim._UserMail__email == "hello@com.org"
+assert isinstance(jim, UserMail)
+assert isinstance(type(jim).email, property), 'Вы не создали property email'
 
-assert employee.reward == 50000
-employee.reward = -100  # ErrorValue:-100
+jim.email = [1, 2, 3]  # печатает ErrorMail:[1, 2, 3]
+jim.email = 'hello@@re.ee'  # печатает ErrorMail:hello@@re.ee
+jim.email = 'hello@re.w3'
+assert jim.email == 'hello@re.w3'
 
-employee.reward = 1.5
-assert employee.reward == 1.5
+k = UserMail('belosnezhka', 'prince@wait.you')
+assert k.email == 'prince@wait.you'
+assert k.login == 'belosnezhka'
+assert isinstance(k, UserMail)
 
-employee.reward = 70000
-assert employee.reward == 70000
-employee.reward = 'hello'  # Печатает ErrorValue:hello
-employee.reward = '777'  # Печатает ErrorValue:777
-employee.reward = [1, 2]  # Печатает ErrorValue:[1, 2]
-assert employee.reward == 70000
-employee._Employee__set_salary(55000)
-assert employee._Employee__get_salary() == 55000
+k.email = {1, 2, 3}  # печатает ErrorMail:{1, 2, 3}
+k.email = 'prince@still@.wait'  # печатает ErrorMail:prince@still@.wait
+k.email = 'prince@stillwait'  # печатает ErrorMail:prince@stillwait
+k.email = 'prince@still.wait'
+assert k.get_email() == 'prince@still.wait'
+k.email = 'pri.nce@stillwait'  # печатает ErrorMail:pri.nce@stillwait
+assert k.email == 'priince@still.wait'
+
+
