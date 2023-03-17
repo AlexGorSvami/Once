@@ -1131,14 +1131,34 @@ import sys
 # k.email = 'pri.nce@stillwait'  # печатает ErrorMail:pri.nce@stillwait
 # assert k.email == 'priince@still.wait'
 
+# 
+# class Notebook:
+#     def __init__(self, notes):
+#         self._notes = notes
+# 
+#     @property
+#     def notes_list(self):
+#         for n,i in enumerate(self._notes):
+#             print(f"{n+1}.{i}")
+#         
+# note = Notebook(['Buy Potato', 'Buy Carrot', 'Wash car'])
+# note.notes_list
 
-class Notebook:
-    def __init__(self, notes):
-        self._notes = notes
 
-    @property
-    def notes_list(self):
-        print(*self._notes)
-        
-note = Notebook(['Buy Potato', 'Buy Carrot', 'Wash car'])
-note.notes_list
+# def counter_add(k):
+#     def add():
+#         nonlocal k
+#         k += 5
+#         return k
+#     return add()
+# cnt = counter_add(7)
+# print(cnt)
+
+def counter_add(n):
+    def add(k):
+        return k + n
+    return add
+
+k = int(input())
+cnt = counter_add(2)
+print(cnt(k))
