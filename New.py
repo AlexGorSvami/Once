@@ -1154,11 +1154,55 @@ import sys
 # cnt = counter_add(7)
 # print(cnt)
 
-def counter_add(n):
-    def add(k):
-        return k + n
-    return add
+# def counter_add(n):
+#     def add(k):
+#         return k + n
+#     return add
+#
+# k = int(input())
+# cnt = counter_add(2)
+# print(cnt(k))
 
-k = int(input())
-cnt = counter_add(2)
-print(cnt(k))
+# def transf(tp='tuple'):
+#     def inner(s):
+#         return (list, tuple)[tp == 'tuple'](map(int, s.split()))
+#     return inner
+# 
+# pr = transf(input())
+# print(pr(input()))
+
+# def func_show(func):
+#     def wrapper(*args, **kwargs):
+#         res = func(*args, **kwargs)
+#         print(f'Площадь прямоугольника: {res}')
+#     return wrapper
+# 
+# @func_show
+# def get_sq(width, height):
+#     return width * height
+# 
+# 
+# get_sq(8,11)
+#
+# def show_menu(func):
+#     def wrapper(*args, **kwargs):
+#         res = func(*args, **kwargs)
+#         for i,val in enumerate(res):
+#             print(f"{i + 1}. {val}")
+#     return wrapper
+#
+# @show_menu
+# def get_menu(s):
+#     return s.split()
+#
+# get_menu('Главная Добавить Удалить Выйти')
+
+def sort(func):
+    def wrapper(*args, **kwargs):
+        res = func(*args, **kwargs)
+        return sorted(res)
+    return wrapper
+
+@sort
+def get_list(s):
+    return map(int, s.split())
