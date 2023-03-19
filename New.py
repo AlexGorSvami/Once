@@ -1197,12 +1197,37 @@ import sys
 #
 # get_menu('Главная Добавить Удалить Выйти')
 
-def sort(func):
-    def wrapper(*args, **kwargs):
-        res = func(*args, **kwargs)
-        return sorted(res)
+# def sort(func):
+#     def wrapper(*args, **kwargs):
+#         res = func(*args, **kwargs)
+#         return sorted(res)
+#     return wrapper
+#
+# @sort
+# def get_list(s):
+#     return map(int, s.split())
+
+english_words = input()
+russian_words = input()
+
+
+def decorator(function):
+    def wrapper(rus, eng):
+        eng_list, rus_list = function(rus, eng)
+        dictionary = dict()
+        for index, word in enumerate(eng_list):
+            dictionary[word] = rus_list[index]
+        return dictionary
+
     return wrapper
 
-@sort
-def get_list(s):
-    return map(int, s.split())
+
+@decorator
+def converter(string_1, string_2):
+    string_1 = string_1.split()
+    string_2 = string_2.split()
+
+    return string_1, string_2
+
+
+print(*sorted(converter(english_words, russian_words).items()))
